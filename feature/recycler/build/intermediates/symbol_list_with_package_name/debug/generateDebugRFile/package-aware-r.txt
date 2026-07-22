@@ -1,0 +1,12 @@
+com.sys.androidkit.feature.recycler
+id btnShuffle
+id rvItems
+id toolbar
+id tvHeader
+id tvMessage
+id tvRow
+layout fragment_recycler
+layout item_recycler_header
+layout item_recycler_row
+string feature_recycler_shuffle
+string feature_recycler_title

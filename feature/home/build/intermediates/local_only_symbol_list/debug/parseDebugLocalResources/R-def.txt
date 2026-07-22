@@ -1,0 +1,22 @@
+R_DEF: Internal format may change without notice
+local
+id action_settings
+id etSearch
+id rvContent
+id rvDemos
+id searchLayout
+id toolbar
+id tvDescription
+id tvEmpty
+id tvSummary
+id tvTags
+id tvTitle
+layout fragment_demo_list
+layout fragment_home
+layout item_category
+layout item_demo
+menu menu_home
+string feature_home_search_empty
+string feature_home_search_hint
+string feature_home_settings
+string feature_home_title

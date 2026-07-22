@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+id btnAdd
+id btnDark
+id btnDelete
+id btnLight
+id btnSystem
+id rvNotes
+id toolbar
+id tvNote
+id tvTheme
+layout fragment_datastore
+layout fragment_room
+layout item_note
+string feature_storage_add
+string feature_storage_datastore_title
+string feature_storage_delete
+string feature_storage_room_title
+string feature_storage_theme_dark
+string feature_storage_theme_light
+string feature_storage_theme_system

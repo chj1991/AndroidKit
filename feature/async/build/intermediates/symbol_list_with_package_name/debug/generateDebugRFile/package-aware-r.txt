@@ -1,0 +1,15 @@
+com.sys.androidkit.feature.async
+id btnCancel
+id btnEmit
+id btnStart
+id toolbar
+id tvFlow
+id tvStatus
+layout fragment_coroutine
+layout fragment_flow
+string feature_async_cancel
+string feature_async_coroutine_title
+string feature_async_emit
+string feature_async_flow_tips
+string feature_async_flow_title
+string feature_async_start

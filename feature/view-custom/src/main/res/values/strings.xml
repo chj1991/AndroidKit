@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_view_custom_title">Custom View Lab</string>
+    <string name="feature_view_custom_progress">进度：%1$d%%</string>
+    <string name="feature_view_custom_tips">要点：onMeasure 决定尺寸，onDraw 绘制环形；触摸时 requestDisallowInterceptTouchEvent 避免被父布局抢走。踩坑：进度变更要 invalidate，不要在 onDraw 里分配对象。</string>
+</resources>

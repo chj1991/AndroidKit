@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_system_camera_status">相机：%1$s</string>
+    <string name="feature_system_denied">未授权</string>
+    <string name="feature_system_ensure_channels">创建 / 更新通知渠道</string>
+    <string name="feature_system_fg_idle">已停止（累计 %1$d 秒）</string>
+    <string name="feature_system_fg_need_notification">请先在 Permission Lab 授予通知权限</string>
+    <string name="feature_system_fg_running">运行中：%1$d 秒</string>
+    <string name="feature_system_fg_start">启动前台计时</string>
+    <string name="feature_system_fg_stop">停止服务</string>
+    <string name="feature_system_fg_tips">要点：startForegroundService + 通知；Android 10+ 需声明 foregroundServiceType。踩坑：API 33+ 无通知权限时前台通知可能不可见。</string>
+    <string name="feature_system_fg_title">Foreground Service Lab</string>
+    <string name="feature_system_granted">已授权</string>
+    <string name="feature_system_not_required">当前系统无需申请</string>
+    <string name="feature_system_notification_status">通知：%1$s</string>
+    <string name="feature_system_notification_tips">要点：Android 8+ 必须先创建 Channel。踩坑：渠道创建后 importance 用户可改，代码无法强制覆盖用户设置。</string>
+    <string name="feature_system_notification_title">Notification Lab</string>
+    <string name="feature_system_notify_default">发送默认通知</string>
+    <string name="feature_system_notify_important">发送重要通知</string>
+    <string name="feature_system_notify_silent">发送静默通知</string>
+    <string name="feature_system_open_channel_settings">打开渠道设置</string>
+    <string name="feature_system_open_settings">打开应用设置</string>
+    <string name="feature_system_permission_tips">要点：使用 Activity Result API；永久拒绝后应引导去设置。踩坑：POST_NOTIFICATIONS 仅 API 33+ 需要运行时申请。</string>
+    <string name="feature_system_permission_title">Permission Lab</string>
+    <string name="feature_system_request_camera">申请相机权限</string>
+    <string name="feature_system_request_notification">申请通知权限</string>
+    <string name="feature_system_share_chooser">分享到</string>
+    <string name="feature_system_share_create">创建缓存文本文件</string>
+    <string name="feature_system_share_send">分享文件</string>
+    <string name="feature_system_share_tips">要点：通过 FileProvider 生成 content:// URI，并授予临时读权限。踩坑：Android 7+ 禁止 file:// 跨应用暴露，authority 需与 Manifest 一致。</string>
+    <string name="feature_system_share_title">FileProvider Lab</string>
+</resources>

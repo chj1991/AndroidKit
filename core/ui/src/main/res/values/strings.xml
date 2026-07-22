@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_ui_loading">加载中…</string>
+    <string name="core_ui_empty">暂无数据</string>
+    <string name="core_ui_error">出错了：%1$s</string>
+</resources>

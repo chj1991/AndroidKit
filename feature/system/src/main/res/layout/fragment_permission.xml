@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:title="@string/feature_system_permission_title" />
+
+    <TextView
+        android:id="@+id/tvCameraStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRequestCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/feature_system_request_camera" />
+
+    <TextView
+        android:id="@+id/tvNotificationStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRequestNotification"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/feature_system_request_notification" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenSettings"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/feature_system_open_settings" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/feature_system_permission_tips"
+        android:textAppearance="?attr/textAppearanceBodyMedium" />
+</LinearLayout>

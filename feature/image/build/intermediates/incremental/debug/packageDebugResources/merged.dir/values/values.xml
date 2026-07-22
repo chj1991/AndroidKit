@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_image_clear">清空 ImageView</string>
+    <string name="feature_image_load_fail">加载失败图（错误占位）</string>
+    <string name="feature_image_load_success">加载成功图</string>
+    <string name="feature_image_preview">预览图</string>
+    <string name="feature_image_tips">要点：Coil 支持占位图、错误图、内存/磁盘缓存。踩坑：列表里要用正确生命周期（ViewTarget），大图注意尺寸与采样。</string>
+    <string name="feature_image_title">Image Lab（Coil）</string>
+</resources>

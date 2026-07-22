@@ -1,0 +1,9 @@
+com.sys.androidkit.core.ui
+id demoContent
+id tvDemoSummary
+id tvDemoTips
+id tvDemoTitle
+layout layout_demo_scaffold
+string core_ui_empty
+string core_ui_error
+string core_ui_loading

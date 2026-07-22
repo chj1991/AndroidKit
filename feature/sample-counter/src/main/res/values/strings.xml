@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_counter_title">Counter（MVVM）</string>
+    <string name="feature_counter_plus">+1</string>
+    <string name="feature_counter_minus">-1</string>
+    <string name="feature_counter_reset">重置</string>
+    <string name="feature_counter_tips">要点：ViewModel 持有 StateFlow；旋转屏幕后计数保持。踩坑：不要把业务状态放在 Fragment 字段里。</string>
+</resources>

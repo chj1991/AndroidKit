@@ -1,0 +1,17 @@
+R_DEF: Internal format may change without notice
+local
+id rbDark
+id rbLight
+id rbSystem
+id rgTheme
+id toolbar
+id tvThemeHint
+layout fragment_settings
+string feature_settings_architecture
+string feature_settings_theme_dark
+string feature_settings_theme_hint
+string feature_settings_theme_label
+string feature_settings_theme_light
+string feature_settings_theme_system
+string feature_settings_title
+string feature_settings_version

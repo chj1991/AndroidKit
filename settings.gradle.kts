@@ -23,5 +23,24 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "AndroidKit"
+
 include(":app")
- 
+
+include(":core:common")
+include(":core:ui")
+include(":core:datastore")
+include(":core:database")
+include(":core:network")
+
+include(":feature:home")
+include(":feature:settings")
+include(":feature:sample-counter")
+include(":feature:lifecycle")
+include(":feature:async")
+include(":feature:recycler")
+include(":feature:storage")
+include(":feature:network")
+include(":feature:system")
+include(":feature:view-custom")
+include(":feature:animation")
+include(":feature:image")

@@ -1,0 +1,16 @@
+R_DEF: Internal format may change without notice
+local
+drawable bg_anim_box
+id animBox
+id btnPulse
+id btnSlide
+id btnValue
+id toolbar
+id tvValue
+layout fragment_animation
+string feature_animation_pulse
+string feature_animation_slide
+string feature_animation_tips
+string feature_animation_title
+string feature_animation_value
+string feature_animation_value_label

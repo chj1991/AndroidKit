@@ -1,0 +1,10 @@
+com.sys.androidkit.feature.network
+id rvPosts
+id swipeRefresh
+id toolbar
+id tvBody
+id tvStatus
+id tvTitle
+layout fragment_retrofit
+layout item_post
+string feature_network_title

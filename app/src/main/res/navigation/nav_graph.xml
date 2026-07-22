@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sys.androidkit.feature.home.HomeFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/demoListFragment"
+        android:name="com.sys.androidkit.feature.home.DemoListFragment"
+        android:label="Demos">
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
+        <deepLink app:uri="androidkit://category/{categoryId}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.sys.androidkit.feature.settings.SettingsFragment"
+        android:label="Settings">
+        <deepLink app:uri="androidkit://settings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/counterFragment"
+        android:name="com.sys.androidkit.feature.samplecounter.CounterFragment"
+        android:label="Counter">
+        <deepLink app:uri="androidkit://demo/counter" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lifecycleFragment"
+        android:name="com.sys.androidkit.feature.lifecycle.LifecycleLabFragment"
+        android:label="Lifecycle">
+        <deepLink app:uri="androidkit://demo/lifecycle" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/coroutineFragment"
+        android:name="com.sys.androidkit.feature.async.CoroutineLabFragment"
+        android:label="Coroutine">
+        <deepLink app:uri="androidkit://demo/coroutine" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/flowFragment"
+        android:name="com.sys.androidkit.feature.async.FlowLabFragment"
+        android:label="Flow">
+        <deepLink app:uri="androidkit://demo/flow" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recyclerFragment"
+        android:name="com.sys.androidkit.feature.recycler.RecyclerLabFragment"
+        android:label="Recycler">
+        <deepLink app:uri="androidkit://demo/recycler" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.sys.androidkit.feature.storage.RoomLabFragment"
+        android:label="Room">
+        <deepLink app:uri="androidkit://demo/room" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/datastoreFragment"
+        android:name="com.sys.androidkit.feature.storage.DataStoreLabFragment"
+        android:label="DataStore">
+        <deepLink app:uri="androidkit://demo/datastore" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/retrofitFragment"
+        android:name="com.sys.androidkit.feature.network.RetrofitLabFragment"
+        android:label="Retrofit">
+        <deepLink app:uri="androidkit://demo/retrofit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="com.sys.androidkit.feature.system.PermissionLabFragment"
+        android:label="Permission">
+        <deepLink app:uri="androidkit://demo/permission" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.sys.androidkit.feature.system.NotificationLabFragment"
+        android:label="Notification">
+        <deepLink app:uri="androidkit://demo/notification" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customViewFragment"
+        android:name="com.sys.androidkit.feature.viewcustom.CustomViewLabFragment"
+        android:label="CustomView">
+        <deepLink app:uri="androidkit://demo/custom_view" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/foregroundFragment"
+        android:name="com.sys.androidkit.feature.system.ForegroundServiceLabFragment"
+        android:label="Foreground">
+        <deepLink app:uri="androidkit://demo/foreground" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/animationFragment"
+        android:name="com.sys.androidkit.feature.animation.AnimationLabFragment"
+        android:label="Animation">
+        <deepLink app:uri="androidkit://demo/animation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.sys.androidkit.feature.image.ImageLabFragment"
+        android:label="Image">
+        <deepLink app:uri="androidkit://demo/image" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.sys.androidkit.feature.system.ShareLabFragment"
+        android:label="Share">
+        <deepLink app:uri="androidkit://demo/share" />
+    </fragment>
+</navigation>
+

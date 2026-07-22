@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_async_cancel">取消</string>
+    <string name="feature_async_coroutine_title">Coroutine Lab</string>
+    <string name="feature_async_emit">触发 SharedFlow 事件</string>
+    <string name="feature_async_flow_tips">StateFlow 有粘性最新值；SharedFlow 适合一次性事件。</string>
+    <string name="feature_async_flow_title">Flow Lab</string>
+    <string name="feature_async_start">启动 IO 任务</string>
+</resources>

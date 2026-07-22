@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_home_search_empty">没有匹配的 Demo</string>
+    <string name="feature_home_search_hint">搜索技术点 / 标签</string>
+    <string name="feature_home_settings">设置</string>
+    <string name="feature_home_title">AndroidKit</string>
+</resources>

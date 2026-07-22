@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_storage_add">新增笔记</string>
+    <string name="feature_storage_datastore_title">DataStore Lab</string>
+    <string name="feature_storage_delete">删除</string>
+    <string name="feature_storage_room_title">Room Lab</string>
+    <string name="feature_storage_theme_dark">DARK</string>
+    <string name="feature_storage_theme_light">LIGHT</string>
+    <string name="feature_storage_theme_system">SYSTEM</string>
+</resources>

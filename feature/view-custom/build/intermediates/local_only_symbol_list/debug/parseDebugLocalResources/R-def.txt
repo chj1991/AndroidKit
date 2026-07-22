@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id ringProgress
+id slider
+id toolbar
+id tvProgress
+layout fragment_custom_view
+string feature_view_custom_progress
+string feature_view_custom_tips
+string feature_view_custom_title

@@ -1,0 +1,16 @@
+com.sys.androidkit.feature.image
+drawable ic_image_error
+drawable ic_image_placeholder
+id btnClear
+id btnLoadFail
+id btnLoadSuccess
+id ivPreview
+id toolbar
+id tvStatus
+layout fragment_image
+string feature_image_clear
+string feature_image_load_fail
+string feature_image_load_success
+string feature_image_preview
+string feature_image_tips
+string feature_image_title

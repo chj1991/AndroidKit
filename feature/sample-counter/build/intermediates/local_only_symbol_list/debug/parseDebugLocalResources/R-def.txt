@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+id btnMinus
+id btnPlus
+id btnReset
+id toolbar
+id tvCount
+layout fragment_counter
+string feature_counter_minus
+string feature_counter_plus
+string feature_counter_reset
+string feature_counter_tips
+string feature_counter_title

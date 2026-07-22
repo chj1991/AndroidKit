@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:title="@string/feature_animation_title" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_margin="16dp">
+
+        <View
+            android:id="@+id/animBox"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_anim_box" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPulse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/feature_animation_pulse" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSlide"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/feature_animation_slide" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnValue"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/feature_animation_value" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/feature_animation_tips"
+        android:textAppearance="?attr/textAppearanceBodyMedium" />
+</LinearLayout>

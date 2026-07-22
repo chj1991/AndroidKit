@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_animation_pulse">缩放 + 透明（AnimatorSet）</string>
+    <string name="feature_animation_slide">位移动画</string>
+    <string name="feature_animation_tips">要点：属性动画改的是真实属性；AnimatorSet 可编排顺序。踩坑：动画持有 View 引用时注意生命周期，页面销毁要 cancel。</string>
+    <string name="feature_animation_title">Animation Lab</string>
+    <string name="feature_animation_value">ValueAnimator 数值</string>
+    <string name="feature_animation_value_label">当前值：%1$d</string>
+</resources>

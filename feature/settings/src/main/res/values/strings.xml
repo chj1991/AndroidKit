@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_settings_title">设置</string>
+    <string name="feature_settings_architecture">当前架构：MVVM（本版固定）</string>
+    <string name="feature_settings_version">AndroidKit · Hilt + DataStore 主题</string>
+    <string name="feature_settings_theme_label">主题模式</string>
+    <string name="feature_settings_theme_system">跟随系统</string>
+    <string name="feature_settings_theme_light">浅色</string>
+    <string name="feature_settings_theme_dark">深色</string>
+    <string name="feature_settings_theme_hint">当前：%1$s（已写入 DataStore）</string>
+</resources>
