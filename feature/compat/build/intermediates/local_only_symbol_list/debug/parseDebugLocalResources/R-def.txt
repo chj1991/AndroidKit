@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+id rvChanges
+id toolbar
+id tvApi
+id tvBadge
+id tvDevice
+id tvSummary
+id tvTitle
+layout fragment_compat
+layout item_compat_change
+string feature_compat_api_line
+string feature_compat_applies
+string feature_compat_device
+string feature_compat_title

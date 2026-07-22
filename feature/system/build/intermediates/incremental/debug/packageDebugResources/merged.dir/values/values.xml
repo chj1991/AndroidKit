@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="feature_system_broadcast_register">动态注册 Receiver</string>
+    <string name="feature_system_broadcast_send">发送应用内广播</string>
+    <string name="feature_system_broadcast_status_off">未注册</string>
+    <string name="feature_system_broadcast_status_on">已注册（RECEIVER_NOT_EXPORTED）</string>
+    <string name="feature_system_broadcast_tips">要点：隐式广播静态注册受限，优先动态注册 + 显式/包名限定。踩坑：Android 13+ 注册需声明 exported 标志。</string>
+    <string name="feature_system_broadcast_title">Broadcast Lab</string>
     <string name="feature_system_camera_status">相机：%1$s</string>
     <string name="feature_system_denied">未授权</string>
     <string name="feature_system_ensure_channels">创建 / 更新通知渠道</string>
