@@ -1,16 +1,32 @@
 R_DEF: Internal format may change without notice
 local
+id btnAsync
 id btnCancel
+id btnCoroutineScope
 id btnEmit
+id btnEnqueue
 id btnStart
+id btnSupervisorScope
 id toolbar
 id tvFlow
+id tvLog
 id tvStatus
 layout fragment_coroutine
 layout fragment_flow
+layout fragment_structured_concurrency
+layout fragment_work_manager
 string feature_async_cancel
 string feature_async_coroutine_title
 string feature_async_emit
 string feature_async_flow_tips
 string feature_async_flow_title
 string feature_async_start
+string feature_async_structured_async
+string feature_async_structured_coroutine_scope
+string feature_async_structured_supervisor_scope
+string feature_async_structured_tips
+string feature_async_structured_title
+string feature_async_work_cancel
+string feature_async_work_enqueue
+string feature_async_work_tips
+string feature_async_work_title

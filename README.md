@@ -180,8 +180,8 @@ app → feature:* → core:*
 | ASY-02 | Dispatcher 切换 | Main / IO / Default | P0 |
 | ASY-03 | Flow 基础 | cold flow 收集 | P0 |
 | ASY-04 | StateFlow / SharedFlow | 热流对比 | P0 |
-| ASY-05 | 结构化并发 | supervisorScope 等 | P1 |
-| ASY-06 | WorkManager | 简单一次性任务 | P2 |
+| ASY-05 | 结构化并发 | coroutineScope / supervisorScope / async（已落地） | P1 |
+| ASY-06 | WorkManager | 简单一次性任务（已落地） | P2 |
 
 ### 12. `feature:recycler`
 
@@ -230,7 +230,7 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | VC-01 | 自定义 View 绘制 | RingProgress：Measure / Draw（已实现） | P1 |
 | VC-02 | 触摸事件 | 拖动改进度 + 防父布局拦截（已实现） | P1 |
-| VC-03 | 滑动冲突 | 嵌套滑动进阶 | P1 |
+| VC-03 | 滑动冲突 | 竖/横嵌套 + requestDisallowIntercept（已落地） | P1 |
 
 ### 17. `feature:animation`（Phase 2 进行中）
 
@@ -238,7 +238,7 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | AN-01 | 属性动画 | ObjectAnimator / ValueAnimator（已实现） | P1 |
 | AN-02 | AnimatorSet | 组合缩放透明（已实现） | P1 |
-| AN-03 | Transition / MotionLayout / Lottie | 进阶 | P2 |
+| AN-03 | Transition | TransitionManager / ChangeBounds / AutoTransition（已落地）；MotionLayout/Lottie 另项 | P2 |
 
 ### 18. `feature:image`（Phase 2 进行中）
 
@@ -246,7 +246,8 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | IMG-01 | Coil 加载 | 成功 / 失败 / 占位图（已实现） | P1 |
 | IMG-02 | 缓存策略演示 | 内存/磁盘缓存说明 | P1 |
-| IMG-03 | CameraX / Photo Picker | 进阶 | P2 |
+| IMG-03 | Photo Picker | 系统选择器 + content Uri（已落地）；CameraX 另项 | P2 |
+| IMG-04 | 自定义图片选择 | 独立选择页 + Fragment Result 回传；张数默认 1 单选，>1 多选（已落地） | P2 |
 
 ### 19. `feature:performance`（Phase 2 进行中）
 
@@ -270,11 +271,10 @@ app → feature:* → core:*
 
 | 模块 | 技术点方向 | 优先级 |
 |------|------------|--------|
-| `feature:view-custom`（其余） | 滑动冲突进阶 | P1 |
-| `feature:animation`（其余） | Transition、Lottie | P2 |
-| `feature:image`（其余） | CameraX / Photo Picker | P2 |
+| `feature:animation`（其余） | MotionLayout、Lottie | P2 |
+| `feature:image`（其余） | CameraX 预览/拍照 | P2 |
 | `feature:performance`（其余） | Baseline Profile 等进阶 | P2 |
-| `feature:compat`（其余） | 后台限制实操 | P1 |
+| `feature:compat`（其余） | 后台限制 / Scoped Storage 实操 | P1 |
 | `architecture:mvi` | Intent / Store / Effect，与 MVVM 对比 | 后续 |
 | 架构切换 | 设置中手动切换 MVVM / MVI | 后续 |
 
@@ -293,7 +293,7 @@ feature:home                HOME-01 ~ HOME-03
 feature:settings            SET-01
 feature:sample-counter      CTR-01 ~ CTR-03
 feature:lifecycle           LC-01 ~ LC-02
-feature:async               ASY-01 ~ ASY-04
+feature:async               ASY-01 ~ ASY-06
 feature:recycler            RV-01 ~ RV-03
 feature:storage             ST-01 ~ ST-02
 feature:network             NW-01 ~ NW-03
@@ -315,11 +315,11 @@ feature:network             NW-01 ~ NW-03
 首页（支持搜索）
  ├─ 架构示例（Counter）
  ├─ 生命周期
- ├─ 异步并发
- ├─ UI 界面（RecyclerView / Custom View / Animation）
+ ├─ 异步并发（Coroutine / Flow / WorkManager）
+ ├─ UI 界面（RecyclerView / Custom View / Nested Scroll / Animation / Transition）
  ├─ 数据存储
  ├─ 网络通信
- ├─ 图片多媒体（Coil）
+ ├─ 图片多媒体（Coil / Photo Picker / Custom Picker）
  ├─ 系统能力（Permission / Notification / Foreground / FileProvider / Broadcast）
  ├─ 性能优化（StrictMode / Leak / Startup）
  ├─ 安全兼容（Compat）
@@ -348,14 +348,14 @@ Phase 1 完成；Phase 2 主体 Demo 已较完整。`:app:assembleDebug` 可通�
 | `feature:settings` | 设置页 + DataStore 主题切换（跟随系统 / 浅色 / 深色） |
 | `feature:sample-counter` | Counter MVVM + `@HiltViewModel` |
 | `feature:lifecycle` | 生命周期日志墙 |
-| `feature:async` | Coroutine / Flow Lab |
+| `feature:async` | Coroutine / Flow / WorkManager / Structured Concurrency |
 | `feature:recycler` | 多 Type + DiffUtil |
 | `feature:storage` | Room / DataStore Lab（Dao / Prefs 由 Hilt 注入） |
 | `feature:network` | Retrofit 列表请求（`PostApi` 由 Hilt 注入） |
 | `feature:system` | Permission / Notification / Foreground / FileProvider / Broadcast |
-| `feature:view-custom` | RingProgress 自定义 View（绘制 / 触摸） |
-| `feature:animation` | ObjectAnimator / AnimatorSet / ValueAnimator |
-| `feature:image` | Coil 占位图 / 错误图 / 网络加载 |
+| `feature:view-custom` | RingProgress；Nested Scroll 滑动冲突 |
+| `feature:animation` | 属性动画；TransitionManager |
+| `feature:image` | Coil；系统 Photo Picker；自定义网格选图（单/多选） |
 | `feature:performance` | StrictMode + Leak + Startup |
 | `feature:compat` | Android 10–15 行为变更清单 |
 

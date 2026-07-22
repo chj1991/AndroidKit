@@ -9,7 +9,10 @@ object DemoCatalog {
     const val DEMO_LIFECYCLE = "lifecycle"
     const val DEMO_COROUTINE = "coroutine"
     const val DEMO_FLOW = "flow"
+    const val DEMO_WORK = "work"
+    const val DEMO_STRUCTURED = "structured"
     const val DEMO_RECYCLER = "recycler"
+    const val DEMO_NESTED_SCROLL = "nested_scroll"
     const val DEMO_ROOM = "room"
     const val DEMO_DATASTORE = "datastore"
     const val DEMO_RETROFIT = "retrofit"
@@ -18,7 +21,10 @@ object DemoCatalog {
     const val DEMO_CUSTOM_VIEW = "custom_view"
     const val DEMO_FOREGROUND = "foreground"
     const val DEMO_ANIMATION = "animation"
+    const val DEMO_TRANSITION = "transition"
     const val DEMO_IMAGE = "image"
+    const val DEMO_PHOTO_PICKER = "photo_picker"
+    const val DEMO_CUSTOM_IMAGE_PICKER = "custom_image_picker"
     const val DEMO_SHARE = "share"
     const val DEMO_BROADCAST = "broadcast"
     const val DEMO_STRICT_MODE = "strict_mode"
@@ -56,7 +62,7 @@ object DemoCatalog {
         DemoCategory(
             id = "async",
             title = "异步并发",
-            description = "协程与 Flow",
+            description = "协程、Flow 与 WorkManager",
             demos = listOf(
                 DemoItem(
                     id = DEMO_COROUTINE,
@@ -69,6 +75,18 @@ object DemoCatalog {
                     title = "Flow Lab",
                     summary = "Flow / StateFlow / SharedFlow",
                     tags = listOf("Flow"),
+                ),
+                DemoItem(
+                    id = DEMO_WORK,
+                    title = "WorkManager Lab",
+                    summary = "OneTimeWork + UniqueWork + WorkInfo",
+                    tags = listOf("WorkManager", "Background"),
+                ),
+                DemoItem(
+                    id = DEMO_STRUCTURED,
+                    title = "Structured Concurrency",
+                    summary = "coroutineScope / supervisorScope / async",
+                    tags = listOf("Coroutine", "supervisorScope"),
                 ),
             ),
         ),
@@ -90,10 +108,22 @@ object DemoCatalog {
                     tags = listOf("CustomView", "Canvas", "Touch"),
                 ),
                 DemoItem(
+                    id = DEMO_NESTED_SCROLL,
+                    title = "Nested Scroll Lab",
+                    summary = "竖/横滑动冲突与 requestDisallowIntercept",
+                    tags = listOf("Touch", "ScrollConflict"),
+                ),
+                DemoItem(
                     id = DEMO_ANIMATION,
                     title = "Animation Lab",
                     summary = "ObjectAnimator / AnimatorSet / ValueAnimator",
                     tags = listOf("Animation", "AnimatorSet"),
+                ),
+                DemoItem(
+                    id = DEMO_TRANSITION,
+                    title = "Transition Lab",
+                    summary = "TransitionManager / ChangeBounds / AutoTransition",
+                    tags = listOf("Transition", "ChangeBounds"),
                 ),
             ),
         ),
@@ -132,13 +162,25 @@ object DemoCatalog {
         DemoCategory(
             id = "media",
             title = "图片多媒体",
-            description = "图片加载等",
+            description = "图片加载与选择",
             demos = listOf(
                 DemoItem(
                     id = DEMO_IMAGE,
                     title = "Image Lab（Coil）",
                     summary = "占位图 / 错误图 / 缓存加载",
                     tags = listOf("Coil", "Image"),
+                ),
+                DemoItem(
+                    id = DEMO_PHOTO_PICKER,
+                    title = "Photo Picker Lab",
+                    summary = "系统选择器 + content Uri（通常无权限）",
+                    tags = listOf("PhotoPicker", "ActivityResult"),
+                ),
+                DemoItem(
+                    id = DEMO_CUSTOM_IMAGE_PICKER,
+                    title = "Custom Image Picker",
+                    summary = "独立选图页；确认后返回展示（单/多选）",
+                    tags = listOf("MediaStore", "FragmentResult"),
                 ),
             ),
         ),

@@ -6,4 +6,13 @@
     <string name="feature_animation_value">ValueAnimator 数值</string>
     <string name="feature_animation_value_label">当前值：%1$d</string>
     <string name="feature_animation_tips">要点：属性动画改的是真实属性；AnimatorSet 可编排顺序。踩坑：动画持有 View 引用时注意生命周期，页面销毁要 cancel。</string>
+    <string name="feature_animation_transition_title">Transition Lab</string>
+    <string name="feature_animation_transition_tips">要点：TransitionManager.beginDelayedTransition 在布局变更前后自动补间。ChangeBounds/Fade/AutoTransition 常用于展开收起与场景切换。</string>
+    <string name="feature_animation_transition_summary">可展开卡片标题</string>
+    <string name="feature_animation_transition_detail">这里是详情区。切换可见性时会跑 ChangeBounds + Fade，父容器高度随之动画。</string>
+    <string name="feature_animation_transition_expand">展开详情</string>
+    <string name="feature_animation_transition_collapse">收起详情</string>
+    <string name="feature_animation_transition_scene">切换 Scene A/B</string>
+    <string name="feature_animation_transition_scene_a">Scene A</string>
+    <string name="feature_animation_transition_scene_b">Scene B</string>
 </resources>

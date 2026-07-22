@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="feature_image_clear">清空 ImageView</string>
+    <string name="feature_image_custom_apply">应用张数</string>
+    <string name="feature_image_custom_cancel">取消</string>
+    <string name="feature_image_custom_clear">清空结果</string>
+    <string name="feature_image_custom_confirm">确认并返回</string>
+    <string name="feature_image_custom_max_hint">可选张数（默认 1）</string>
+    <string name="feature_image_custom_open">打开选择界面</string>
+    <string name="feature_image_custom_permission">申请相册权限</string>
+    <string name="feature_image_custom_preview_empty">从选择界面确认返回后，在此预览首张并列出全部 Uri</string>
+    <string name="feature_image_custom_preview_meta">已确认 %1$d 张：\n%2$s</string>
+    <string name="feature_image_custom_reload">刷新相册</string>
+    <string name="feature_image_custom_result_title">选择结果</string>
+    <string name="feature_image_custom_select_title">选择图片</string>
+    <string name="feature_image_custom_tips">流程：本页配置张数 → 打开独立选择界面 → 确认后 Fragment Result 返回本页展示。张数=1 单选，>1 多选。</string>
+    <string name="feature_image_custom_title">Custom Image Picker</string>
     <string name="feature_image_load_fail">加载失败图（错误占位）</string>
     <string name="feature_image_load_success">加载成功图</string>
+    <string name="feature_image_picker_pick">打开 Photo Picker</string>
+    <string name="feature_image_picker_tips">要点：Android Photo Picker 通过 Activity Result 返回 content Uri，通常无需申请存储/相册权限。低版本系统会走兼容实现。对比：旧方案 READ_EXTERNAL_STORAGE / ACTION_OPEN_DOCUMENT 权限与体验不同。</string>
+    <string name="feature_image_picker_title">Photo Picker Lab</string>
     <string name="feature_image_preview">预览图</string>
     <string name="feature_image_tips">要点：Coil 支持占位图、错误图、内存/磁盘缓存。踩坑：列表里要用正确生命周期（ViewTarget），大图注意尺寸与采样。</string>
     <string name="feature_image_title">Image Lab（Coil）</string>

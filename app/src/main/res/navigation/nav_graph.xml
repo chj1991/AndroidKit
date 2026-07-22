@@ -55,6 +55,20 @@
     </fragment>
 
     <fragment
+        android:id="@+id/workFragment"
+        android:name="com.sys.androidkit.feature.async.WorkManagerLabFragment"
+        android:label="WorkManager">
+        <deepLink app:uri="androidkit://demo/work" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/structuredFragment"
+        android:name="com.sys.androidkit.feature.async.StructuredConcurrencyLabFragment"
+        android:label="Structured Concurrency">
+        <deepLink app:uri="androidkit://demo/structured" />
+    </fragment>
+
+    <fragment
         android:id="@+id/recyclerFragment"
         android:name="com.sys.androidkit.feature.recycler.RecyclerLabFragment"
         android:label="Recycler">
@@ -104,6 +118,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/nestedScrollFragment"
+        android:name="com.sys.androidkit.feature.viewcustom.NestedScrollLabFragment"
+        android:label="Nested Scroll">
+        <deepLink app:uri="androidkit://demo/nested_scroll" />
+    </fragment>
+
+    <fragment
         android:id="@+id/foregroundFragment"
         android:name="com.sys.androidkit.feature.system.ForegroundServiceLabFragment"
         android:label="Foreground">
@@ -118,10 +139,42 @@
     </fragment>
 
     <fragment
+        android:id="@+id/transitionFragment"
+        android:name="com.sys.androidkit.feature.animation.TransitionLabFragment"
+        android:label="Transition">
+        <deepLink app:uri="androidkit://demo/transition" />
+    </fragment>
+
+    <fragment
         android:id="@+id/imageFragment"
         android:name="com.sys.androidkit.feature.image.ImageLabFragment"
         android:label="Image">
         <deepLink app:uri="androidkit://demo/image" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photoPickerFragment"
+        android:name="com.sys.androidkit.feature.image.PhotoPickerLabFragment"
+        android:label="Photo Picker">
+        <deepLink app:uri="androidkit://demo/photo_picker" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customImagePickerFragment"
+        android:name="com.sys.androidkit.feature.image.CustomImagePickerLabFragment"
+        android:label="Custom Image Picker">
+        <deepLink app:uri="androidkit://demo/custom_image_picker" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customImagePickerSelectFragment"
+        android:name="com.sys.androidkit.feature.image.CustomImagePickerSelectFragment"
+        android:label="选择图片">
+        <argument
+            android:name="maxCount"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <deepLink app:uri="androidkit://custom_image_picker/select/{maxCount}" />
     </fragment>
 
     <fragment

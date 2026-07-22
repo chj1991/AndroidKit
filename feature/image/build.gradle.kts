@@ -27,5 +27,7 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(project(":core:ui"))
     implementation(libs.coil)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.navigation.fragment.ktx)
 }

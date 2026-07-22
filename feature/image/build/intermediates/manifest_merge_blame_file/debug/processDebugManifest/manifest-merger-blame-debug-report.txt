@@ -6,4 +6,15 @@
 5-->INJECTED
 5-->INJECTED
 6
-7</manifest>
+7    <!-- 自定义相册网格需要读取 MediaStore；系统 Photo Picker 不需要这些权限 -->
+8    <uses-permission
+8-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:5:5-7:38
+9        android:name="android.permission.READ_EXTERNAL_STORAGE"
+9-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:6:9-64
+10        android:maxSdkVersion="32" />
+10-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:7:9-35
+11    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+11-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:8:5-76
+11-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:8:22-73
+12
+13</manifest>
