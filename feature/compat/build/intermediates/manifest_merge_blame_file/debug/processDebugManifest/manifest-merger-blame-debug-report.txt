@@ -6,4 +6,8 @@
 5-->INJECTED
 5-->INJECTED
 6
-7</manifest>
+7    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+7-->/Users/caihuajian/Desktop/android/AndroidKit/feature/compat/src/main/AndroidManifest.xml:4:5-95
+7-->/Users/caihuajian/Desktop/android/AndroidKit/feature/compat/src/main/AndroidManifest.xml:4:22-92
+8
+9</manifest>

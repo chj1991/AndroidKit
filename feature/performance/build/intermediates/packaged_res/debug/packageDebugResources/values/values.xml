@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="feature_performance_baseline_open_startup">打开 Startup Lab</string>
+    <string name="feature_performance_baseline_refresh">刷新说明</string>
+    <string name="feature_performance_baseline_title">Baseline Profile Lab</string>
     <string name="feature_performance_disk">主线程写文件（触发 DiskWrite）</string>
     <string name="feature_performance_enable">启用 StrictMode（检测主线程违规）</string>
     <string name="feature_performance_leak_clear">清除引用</string>

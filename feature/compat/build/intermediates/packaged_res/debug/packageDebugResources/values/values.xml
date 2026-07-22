@@ -2,6 +2,14 @@
 <resources>
     <string name="feature_compat_api_line">API %1$d · %2$s</string>
     <string name="feature_compat_applies">当前设备会受到此变更影响</string>
+    <string name="feature_compat_bg_app_details">应用详情设置</string>
+    <string name="feature_compat_bg_battery">请求忽略电池优化</string>
+    <string name="feature_compat_bg_battery_ok">已忽略电池优化（可再打开设置）</string>
+    <string name="feature_compat_bg_exact_alarm">精确闹钟设置</string>
+    <string name="feature_compat_bg_title">Background Limit Lab</string>
     <string name="feature_compat_device">当前设备：API %1$d（%2$s）</string>
+    <string name="feature_compat_scoped_refresh">刷新路径信息</string>
+    <string name="feature_compat_scoped_title">Scoped Storage Lab</string>
+    <string name="feature_compat_scoped_write">写入应用专属目录</string>
     <string name="feature_compat_title">Compat Lab</string>
 </resources>

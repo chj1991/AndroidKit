@@ -28,4 +28,6 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.transition)
+    implementation(libs.lottie)
+    implementation(libs.androidx.constraintlayout)
 }

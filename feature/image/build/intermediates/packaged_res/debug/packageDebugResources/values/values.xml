@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="feature_image_camerax_capture">拍照</string>
+    <string name="feature_image_camerax_permission">申请相机权限</string>
+    <string name="feature_image_camerax_tips">要点：CameraX 用 lifecycle 绑定 Preview + ImageCapture；拍照写入 cacheDir。模拟器需虚拟场景或 webcam。</string>
+    <string name="feature_image_camerax_title">CameraX Lab</string>
     <string name="feature_image_clear">清空 ImageView</string>
     <string name="feature_image_custom_apply">应用张数</string>
     <string name="feature_image_custom_cancel">取消</string>

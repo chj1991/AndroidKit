@@ -22,15 +22,21 @@ object DemoCatalog {
     const val DEMO_FOREGROUND = "foreground"
     const val DEMO_ANIMATION = "animation"
     const val DEMO_TRANSITION = "transition"
+    const val DEMO_LOTTIE = "lottie"
+    const val DEMO_MOTION = "motion"
     const val DEMO_IMAGE = "image"
     const val DEMO_PHOTO_PICKER = "photo_picker"
     const val DEMO_CUSTOM_IMAGE_PICKER = "custom_image_picker"
+    const val DEMO_CAMERAX = "camerax"
     const val DEMO_SHARE = "share"
     const val DEMO_BROADCAST = "broadcast"
     const val DEMO_STRICT_MODE = "strict_mode"
     const val DEMO_LEAK = "leak"
     const val DEMO_STARTUP = "startup"
+    const val DEMO_BASELINE = "baseline"
     const val DEMO_COMPAT = "compat"
+    const val DEMO_SCOPED_STORAGE = "scoped_storage"
+    const val DEMO_BACKGROUND_LIMIT = "background_limit"
 
     val categories: List<DemoCategory> = listOf(
         DemoCategory(
@@ -125,6 +131,18 @@ object DemoCatalog {
                     summary = "TransitionManager / ChangeBounds / AutoTransition",
                     tags = listOf("Transition", "ChangeBounds"),
                 ),
+                DemoItem(
+                    id = DEMO_LOTTIE,
+                    title = "Lottie Lab",
+                    summary = "播放 / 暂停 / 调速本地 JSON",
+                    tags = listOf("Lottie", "Animation"),
+                ),
+                DemoItem(
+                    id = DEMO_MOTION,
+                    title = "MotionLayout Lab",
+                    summary = "MotionScene start/end 布局过渡",
+                    tags = listOf("MotionLayout", "ConstraintLayout"),
+                ),
             ),
         ),
         DemoCategory(
@@ -162,7 +180,7 @@ object DemoCatalog {
         DemoCategory(
             id = "media",
             title = "图片多媒体",
-            description = "图片加载与选择",
+            description = "图片加载、选择与相机",
             demos = listOf(
                 DemoItem(
                     id = DEMO_IMAGE,
@@ -181,6 +199,12 @@ object DemoCatalog {
                     title = "Custom Image Picker",
                     summary = "独立选图页；确认后返回展示（单/多选）",
                     tags = listOf("MediaStore", "FragmentResult"),
+                ),
+                DemoItem(
+                    id = DEMO_CAMERAX,
+                    title = "CameraX Lab",
+                    summary = "Preview + ImageCapture 拍照到缓存",
+                    tags = listOf("CameraX", "Preview"),
                 ),
             ),
         ),
@@ -244,6 +268,12 @@ object DemoCatalog {
                     summary = "Application 耗时与串行/并行初始化对比",
                     tags = listOf("Startup", "Application"),
                 ),
+                DemoItem(
+                    id = DEMO_BASELINE,
+                    title = "Baseline Profile Lab",
+                    summary = "ProfileInstaller 与生成清单说明",
+                    tags = listOf("BaselineProfile", "Startup"),
+                ),
             ),
         ),
         DemoCategory(
@@ -255,7 +285,19 @@ object DemoCatalog {
                     id = DEMO_COMPAT,
                     title = "Compat Lab",
                     summary = "版本行为变更清单与当前设备高亮",
-                    tags = listOf("Compat", "ScopedStorage"),
+                    tags = listOf("Compat"),
+                ),
+                DemoItem(
+                    id = DEMO_SCOPED_STORAGE,
+                    title = "Scoped Storage Lab",
+                    summary = "应用专属目录与共享存储边界",
+                    tags = listOf("ScopedStorage", "Storage"),
+                ),
+                DemoItem(
+                    id = DEMO_BACKGROUND_LIMIT,
+                    title = "Background Limit Lab",
+                    summary = "电池优化 / 精确闹钟 / 后台限制",
+                    tags = listOf("Background", "Battery"),
                 ),
             ),
         ),

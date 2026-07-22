@@ -70,6 +70,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.androidx.profileinstaller)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)

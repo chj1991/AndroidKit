@@ -15,4 +15,13 @@
     <string name="feature_animation_transition_scene">切换 Scene A/B</string>
     <string name="feature_animation_transition_scene_a">Scene A</string>
     <string name="feature_animation_transition_scene_b">Scene B</string>
+    <string name="feature_animation_lottie_title">Lottie Lab</string>
+    <string name="feature_animation_lottie_tips">要点：Lottie 渲染 AE 导出的 JSON；可控制 play/pause 与 speed。资源放在 res/raw。</string>
+    <string name="feature_animation_lottie_play">播放</string>
+    <string name="feature_animation_lottie_pause">暂停</string>
+    <string name="feature_animation_lottie_speed">切换速度</string>
+    <string name="feature_animation_motion_title">MotionLayout Lab</string>
+    <string name="feature_animation_motion_tips">要点：MotionScene 定义 start/end ConstraintSet；OnClick 或代码 transitionToEnd/Start。适合手势驱动的复杂布局动画。</string>
+    <string name="feature_animation_motion_hint">点色块切换 start ↔ end</string>
+    <string name="feature_animation_motion_toggle">切换 Transition</string>
 </resources>

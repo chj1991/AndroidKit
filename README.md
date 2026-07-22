@@ -238,7 +238,9 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | AN-01 | 属性动画 | ObjectAnimator / ValueAnimator（已实现） | P1 |
 | AN-02 | AnimatorSet | 组合缩放透明（已实现） | P1 |
-| AN-03 | Transition | TransitionManager / ChangeBounds / AutoTransition（已落地）；MotionLayout/Lottie 另项 | P2 |
+| AN-03 | Transition | TransitionManager / ChangeBounds / AutoTransition（已落地） | P2 |
+| AN-04 | Lottie | 本地 JSON 播放 / 暂停 / 调速（已落地） | P2 |
+| AN-05 | MotionLayout | MotionScene start/end 过渡（已落地） | P2 |
 
 ### 18. `feature:image`（Phase 2 进行中）
 
@@ -246,8 +248,9 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | IMG-01 | Coil 加载 | 成功 / 失败 / 占位图（已实现） | P1 |
 | IMG-02 | 缓存策略演示 | 内存/磁盘缓存说明 | P1 |
-| IMG-03 | Photo Picker | 系统选择器 + content Uri（已落地）；CameraX 另项 | P2 |
+| IMG-03 | Photo Picker | 系统选择器 + content Uri（已落地） | P2 |
 | IMG-04 | 自定义图片选择 | 独立选择页 + Fragment Result 回传；张数默认 1 单选，>1 多选（已落地） | P2 |
+| IMG-05 | CameraX | Preview + ImageCapture 拍照（已落地） | P2 |
 
 ### 19. `feature:performance`（Phase 2 进行中）
 
@@ -256,14 +259,15 @@ app → feature:* → core:*
 | PF-01 | StrictMode | 主线程 DiskWrite / 卡顿演示（已实现） | P1 |
 | PF-02 | 内存泄漏场景 | 单例持有 Activity 对比修复（已实现） | P1 |
 | PF-03 | 启动优化说明 | Application 耗时 + 串行/并行对比（已实现） | P1 |
+| PF-04 | Baseline Profile | ProfileInstaller + 生成清单说明（已落地） | P2 |
 
 ### 20. `feature:compat`（Phase 2 进行中）
 
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
 | CP-01 | Android 10–15 行为变更 | 清单 + 当前设备高亮（已实现） | P1 |
-| CP-02 | Scoped Storage | 结合存储 Demo 说明 | P1 |
-| CP-03 | 后台限制 | 位置 / 启动限制进阶 | P1 |
+| CP-02 | Scoped Storage | 路径对比 + 应用专属目录写入（已落地） | P1 |
+| CP-03 | 后台限制 | 电池优化 / 精确闹钟 / 说明清单（已落地） | P1 |
 
 ---
 
@@ -271,10 +275,7 @@ app → feature:* → core:*
 
 | 模块 | 技术点方向 | 优先级 |
 |------|------------|--------|
-| `feature:animation`（其余） | MotionLayout、Lottie | P2 |
-| `feature:image`（其余） | CameraX 预览/拍照 | P2 |
-| `feature:performance`（其余） | Baseline Profile 等进阶 | P2 |
-| `feature:compat`（其余） | 后台限制 / Scoped Storage 实操 | P1 |
+| `:benchmark` | Macrobenchmark 生成 baseline-prof.txt | P2 |
 | `architecture:mvi` | Intent / Store / Effect，与 MVVM 对比 | 后续 |
 | 架构切换 | 设置中手动切换 MVVM / MVI | 后续 |
 
@@ -316,13 +317,13 @@ feature:network             NW-01 ~ NW-03
  ├─ 架构示例（Counter）
  ├─ 生命周期
  ├─ 异步并发（Coroutine / Flow / WorkManager）
- ├─ UI 界面（RecyclerView / Custom View / Nested Scroll / Animation / Transition）
+ ├─ UI 界面（… / Transition / Lottie / MotionLayout）
  ├─ 数据存储
  ├─ 网络通信
- ├─ 图片多媒体（Coil / Photo Picker / Custom Picker）
+ ├─ 图片多媒体（Coil / Photo Picker / Custom Picker / CameraX）
  ├─ 系统能力（Permission / Notification / Foreground / FileProvider / Broadcast）
- ├─ 性能优化（StrictMode / Leak / Startup）
- ├─ 安全兼容（Compat）
+ ├─ 性能优化（StrictMode / Leak / Startup / Baseline Profile）
+ ├─ 安全兼容（Compat / Scoped Storage / Background）
  └─ 设置
 ```
 
@@ -354,10 +355,10 @@ Phase 1 完成；Phase 2 主体 Demo 已较完整。`:app:assembleDebug` 可通�
 | `feature:network` | Retrofit 列表请求（`PostApi` 由 Hilt 注入） |
 | `feature:system` | Permission / Notification / Foreground / FileProvider / Broadcast |
 | `feature:view-custom` | RingProgress；Nested Scroll 滑动冲突 |
-| `feature:animation` | 属性动画；TransitionManager |
-| `feature:image` | Coil；系统 Photo Picker；自定义网格选图（单/多选） |
-| `feature:performance` | StrictMode + Leak + Startup |
-| `feature:compat` | Android 10–15 行为变更清单 |
+| `feature:animation` | 属性动画；Transition；Lottie；MotionLayout |
+| `feature:image` | Coil；Photo Picker；自定义选图；CameraX |
+| `feature:performance` | StrictMode + Leak + Startup + Baseline Profile |
+| `feature:compat` | 行为变更清单；Scoped Storage；后台限制 |
 
 ### 运行
 

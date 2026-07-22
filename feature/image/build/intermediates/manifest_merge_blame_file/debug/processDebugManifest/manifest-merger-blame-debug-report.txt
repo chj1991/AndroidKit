@@ -16,5 +16,15 @@
 11    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 11-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:8:5-76
 11-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:8:22-73
-12
-13</manifest>
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:9:5-65
+12-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:9:22-62
+13
+14    <uses-feature
+14-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:11:5-13:36
+15        android:name="android.hardware.camera"
+15-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:12:9-47
+16        android:required="false" />
+16-->/Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:13:9-33
+17
+18</manifest>

@@ -1,7 +1,7 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:2:1-9:12
-INJECTED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:2:1-9:12
+ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:2:1-14:12
+INJECTED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:2:1-14:12
 	package
 		INJECTED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml
 	xmlns:android
@@ -16,6 +16,16 @@ uses-permission#android.permission.READ_MEDIA_IMAGES
 ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:8:5-76
 	android:name
 		ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:8:22-73
+uses-permission#android.permission.CAMERA
+ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:9:22-62
+uses-feature#android.hardware.camera
+ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml:12:9-47
 uses-sdk
 INJECTED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/caihuajian/Desktop/android/AndroidKit/feature/image/src/main/AndroidManifest.xml

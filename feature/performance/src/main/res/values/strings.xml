@@ -21,4 +21,7 @@
     <string name="feature_performance_startup_parallel">模拟并行初始化</string>
     <string name="feature_performance_startup_checklist">清单：\n1. Application 只做必要同步初始化\n2. 重任务延后到首帧后 / 子线程\n3. 使用启动主题减少白屏\n4. 关注 Baseline Profile / App Startup 库（进阶）</string>
     <string name="feature_performance_startup_tips">要点：减少主线程同步工作，能并行就并行。踩坑：把网络/磁盘塞进 Application.onCreate 会明显拖慢冷启动。</string>
+    <string name="feature_performance_baseline_title">Baseline Profile Lab</string>
+    <string name="feature_performance_baseline_open_startup">打开 Startup Lab</string>
+    <string name="feature_performance_baseline_refresh">刷新说明</string>
 </resources>

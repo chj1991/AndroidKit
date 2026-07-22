@@ -146,6 +146,20 @@
     </fragment>
 
     <fragment
+        android:id="@+id/lottieFragment"
+        android:name="com.sys.androidkit.feature.animation.LottieLabFragment"
+        android:label="Lottie">
+        <deepLink app:uri="androidkit://demo/lottie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/motionFragment"
+        android:name="com.sys.androidkit.feature.animation.MotionLabFragment"
+        android:label="MotionLayout">
+        <deepLink app:uri="androidkit://demo/motion" />
+    </fragment>
+
+    <fragment
         android:id="@+id/imageFragment"
         android:name="com.sys.androidkit.feature.image.ImageLabFragment"
         android:label="Image">
@@ -175,6 +189,13 @@
             android:defaultValue="1"
             app:argType="integer" />
         <deepLink app:uri="androidkit://custom_image_picker/select/{maxCount}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cameraXFragment"
+        android:name="com.sys.androidkit.feature.image.CameraXLabFragment"
+        android:label="CameraX">
+        <deepLink app:uri="androidkit://demo/camerax" />
     </fragment>
 
     <fragment
@@ -213,10 +234,31 @@
     </fragment>
 
     <fragment
+        android:id="@+id/baselineFragment"
+        android:name="com.sys.androidkit.feature.performance.BaselineProfileLabFragment"
+        android:label="Baseline Profile">
+        <deepLink app:uri="androidkit://demo/baseline" />
+    </fragment>
+
+    <fragment
         android:id="@+id/compatFragment"
         android:name="com.sys.androidkit.feature.compat.CompatLabFragment"
         android:label="Compat">
         <deepLink app:uri="androidkit://demo/compat" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scopedStorageFragment"
+        android:name="com.sys.androidkit.feature.compat.ScopedStorageLabFragment"
+        android:label="Scoped Storage">
+        <deepLink app:uri="androidkit://demo/scoped_storage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/backgroundLimitFragment"
+        android:name="com.sys.androidkit.feature.compat.BackgroundLimitLabFragment"
+        android:label="Background Limit">
+        <deepLink app:uri="androidkit://demo/background_limit" />
     </fragment>
 </navigation>
 

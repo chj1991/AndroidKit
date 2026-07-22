@@ -23,4 +23,8 @@
     <string name="feature_image_custom_preview_empty">从选择界面确认返回后，在此预览首张并列出全部 Uri</string>
     <string name="feature_image_custom_preview_meta">已确认 %1$d 张：\n%2$s</string>
     <string name="feature_image_custom_tips">流程：本页配置张数 → 打开独立选择界面 → 确认后 Fragment Result 返回本页展示。张数=1 单选，&gt;1 多选。</string>
+    <string name="feature_image_camerax_title">CameraX Lab</string>
+    <string name="feature_image_camerax_permission">申请相机权限</string>
+    <string name="feature_image_camerax_capture">拍照</string>
+    <string name="feature_image_camerax_tips">要点：CameraX 用 lifecycle 绑定 Preview + ImageCapture；拍照写入 cacheDir。模拟器需虚拟场景或 webcam。</string>
 </resources>
