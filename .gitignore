@@ -4,7 +4,8 @@
 .idea/
 .kotlin/
 .DS_Store
-/build
+# 根目录与各模块的 Gradle/AGP 构建输出
+build/
 /captures
 .externalNativeBuild
 .cxx

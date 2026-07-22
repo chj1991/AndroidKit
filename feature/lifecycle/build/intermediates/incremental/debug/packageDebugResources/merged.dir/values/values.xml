@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="feature_lifecycle_clear">清空日志</string>
-    <string name="feature_lifecycle_title">Lifecycle Lab</string>
-</resources>

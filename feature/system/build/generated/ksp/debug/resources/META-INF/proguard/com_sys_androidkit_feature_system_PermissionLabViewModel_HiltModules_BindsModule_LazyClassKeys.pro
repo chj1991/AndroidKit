@@ -1,1 +1,0 @@
--keep,allowobfuscation,allowshrinking class com.sys.androidkit.feature.system.PermissionLabViewModel

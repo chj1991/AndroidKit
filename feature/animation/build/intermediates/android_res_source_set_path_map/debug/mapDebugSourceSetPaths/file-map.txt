@@ -1,9 +1,0 @@
-com.sys.androidkit.feature.animation-pngs-0 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/build/generated/res/pngs/debug
-com.sys.androidkit.feature.animation-updated_navigation_xml-1 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/build/generated/updated_navigation_xml/debug
-com.sys.androidkit.feature.animation-mergeDebugResources-2 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
-com.sys.androidkit.feature.animation-mergeDebugResources-3 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
-com.sys.androidkit.feature.animation-debug-4 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/build/intermediates/merged_res/debug/mergeDebugResources
-com.sys.androidkit.feature.animation-debug-5 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/build/intermediates/packaged_res/debug/packageDebugResources
-com.sys.androidkit.feature.animation-debug-6 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/src/debug/res
-com.sys.androidkit.feature.animation-main-7 /Users/caihuajian/Desktop/android/AndroidKit/feature/animation/src/main/res
-gradleHome-0 /private/var/folders/2z/qjk4ghb95lqdj80gjmvj0c5w0000gn/T/cursor-sandbox-cache/69aa5f9c6e2f8e3f20c332f5a39dd1f5/gradle

@@ -1,7 +1,0 @@
-com.sys.androidkit.feature.lifecycle
-id btnClear
-id toolbar
-id tvLogs
-layout fragment_lifecycle
-string feature_lifecycle_clear
-string feature_lifecycle_title
