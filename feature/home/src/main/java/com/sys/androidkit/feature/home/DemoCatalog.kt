@@ -20,6 +20,11 @@ object DemoCatalog {
     const val DEMO_ANIMATION = "animation"
     const val DEMO_IMAGE = "image"
     const val DEMO_SHARE = "share"
+    const val DEMO_BROADCAST = "broadcast"
+    const val DEMO_STRICT_MODE = "strict_mode"
+    const val DEMO_LEAK = "leak"
+    const val DEMO_STARTUP = "startup"
+    const val DEMO_COMPAT = "compat"
 
     val categories: List<DemoCategory> = listOf(
         DemoCategory(
@@ -165,6 +170,50 @@ object DemoCatalog {
                     title = "FileProvider Lab",
                     summary = "content:// 分享缓存文件",
                     tags = listOf("FileProvider", "Share"),
+                ),
+                DemoItem(
+                    id = DEMO_BROADCAST,
+                    title = "Broadcast Lab",
+                    summary = "动态注册与应用内广播",
+                    tags = listOf("Broadcast", "Receiver"),
+                ),
+            ),
+        ),
+        DemoCategory(
+            id = "performance",
+            title = "性能优化",
+            description = "StrictMode、泄漏与启动",
+            demos = listOf(
+                DemoItem(
+                    id = DEMO_STRICT_MODE,
+                    title = "StrictMode Lab",
+                    summary = "主线程 IO / 卡顿违规检测",
+                    tags = listOf("StrictMode", "Performance"),
+                ),
+                DemoItem(
+                    id = DEMO_LEAK,
+                    title = "Leak Lab",
+                    summary = "单例错误持有 Activity 的对比修复",
+                    tags = listOf("Leak", "Context"),
+                ),
+                DemoItem(
+                    id = DEMO_STARTUP,
+                    title = "Startup Lab",
+                    summary = "Application 耗时与串行/并行初始化对比",
+                    tags = listOf("Startup", "Application"),
+                ),
+            ),
+        ),
+        DemoCategory(
+            id = "compat",
+            title = "安全兼容",
+            description = "Android 10–15 行为变更",
+            demos = listOf(
+                DemoItem(
+                    id = DEMO_COMPAT,
+                    title = "Compat Lab",
+                    summary = "版本行为变更清单与当前设备高亮",
+                    tags = listOf("Compat", "ScopedStorage"),
                 ),
             ),
         ),

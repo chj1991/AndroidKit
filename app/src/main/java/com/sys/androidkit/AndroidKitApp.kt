@@ -1,8 +1,10 @@
 package com.sys.androidkit
 
 import android.app.Application
+import android.os.SystemClock
 import androidx.appcompat.app.AppCompatDelegate
 import com.sys.androidkit.core.common.log.AppLog
+import com.sys.androidkit.core.common.startup.StartupTrace
 import com.sys.androidkit.core.datastore.AppPreferences
 import com.sys.androidkit.core.datastore.ThemeMode
 import dagger.hilt.android.HiltAndroidApp
@@ -22,10 +24,17 @@ class AndroidKitApp : Application() {
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
 
     override fun onCreate() {
+        val start = SystemClock.elapsedRealtime()
         super.onCreate()
         AppLog.enabled = BuildConfig.DEBUG
         AppLog.i("AndroidKitApp started")
         observeTheme()
+        val cost = SystemClock.elapsedRealtime() - start
+        StartupTrace.markAppCreate(
+            costMs = cost,
+            processStartElapsedRealtime = start,
+        )
+        AppLog.i("Application.onCreate cost=${cost}ms")
     }
 
     private fun observeTheme() {

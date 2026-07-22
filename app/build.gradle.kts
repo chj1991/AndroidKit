@@ -58,6 +58,8 @@ dependencies {
     implementation(project(":feature:view-custom"))
     implementation(project(":feature:animation"))
     implementation(project(":feature:image"))
+    implementation(project(":feature:performance"))
+    implementation(project(":feature:compat"))
 
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)

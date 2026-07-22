@@ -32,4 +32,11 @@
     <string name="feature_system_share_send">分享文件</string>
     <string name="feature_system_share_chooser">分享到</string>
     <string name="feature_system_share_tips">要点：通过 FileProvider 生成 content:// URI，并授予临时读权限。踩坑：Android 7+ 禁止 file:// 跨应用暴露，authority 需与 Manifest 一致。</string>
+
+    <string name="feature_system_broadcast_title">Broadcast Lab</string>
+    <string name="feature_system_broadcast_register">动态注册 Receiver</string>
+    <string name="feature_system_broadcast_send">发送应用内广播</string>
+    <string name="feature_system_broadcast_status_on">已注册（RECEIVER_NOT_EXPORTED）</string>
+    <string name="feature_system_broadcast_status_off">未注册</string>
+    <string name="feature_system_broadcast_tips">要点：隐式广播静态注册受限，优先动态注册 + 显式/包名限定。踩坑：Android 13+ 注册需声明 exported 标志。</string>
 </resources>

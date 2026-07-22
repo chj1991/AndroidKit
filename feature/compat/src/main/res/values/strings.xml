@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_compat_title">Compat Lab</string>
+    <string name="feature_compat_device">当前设备：API %1$d（%2$s）</string>
+    <string name="feature_compat_applies">当前设备会受到此变更影响</string>
+    <string name="feature_compat_api_line">API %1$d · %2$s</string>
+</resources>

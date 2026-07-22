@@ -130,5 +130,40 @@
         android:label="Share">
         <deepLink app:uri="androidkit://demo/share" />
     </fragment>
+
+    <fragment
+        android:id="@+id/broadcastFragment"
+        android:name="com.sys.androidkit.feature.system.BroadcastLabFragment"
+        android:label="Broadcast">
+        <deepLink app:uri="androidkit://demo/broadcast" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/strictModeFragment"
+        android:name="com.sys.androidkit.feature.performance.StrictModeLabFragment"
+        android:label="StrictMode">
+        <deepLink app:uri="androidkit://demo/strict_mode" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leakFragment"
+        android:name="com.sys.androidkit.feature.performance.LeakLabFragment"
+        android:label="Leak">
+        <deepLink app:uri="androidkit://demo/leak" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/startupFragment"
+        android:name="com.sys.androidkit.feature.performance.StartupLabFragment"
+        android:label="Startup">
+        <deepLink app:uri="androidkit://demo/startup" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/compatFragment"
+        android:name="com.sys.androidkit.feature.compat.CompatLabFragment"
+        android:label="Compat">
+        <deepLink app:uri="androidkit://demo/compat" />
+    </fragment>
 </navigation>
 

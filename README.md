@@ -51,7 +51,9 @@ AndroidKit/
     ├── system/                   # 权限 / 通知 / 前台服务
     ├── view-custom/              # 自定义 View
     ├── animation/                # 属性动画
-    └── image/                    # Coil 图片加载
+    ├── image/                    # Coil 图片加载
+    ├── performance/              # StrictMode / 泄漏场景
+    └── compat/                   # 版本行为变更
 ```
 
 依赖方向（单向）：
@@ -219,7 +221,7 @@ app → feature:* → core:*
 | SYS-01 | 运行时权限 | Activity Result API，相机 / 通知（已实现） | P1 |
 | SYS-02 | 通知渠道 | 多渠道创建与发送（已实现） | P1 |
 | SYS-03 | Foreground Service | 前台计时服务 + 常驻通知（已实现） | P1 |
-| SYS-04 | 广播限制适配 | 动态注册示例 | P1 |
+| SYS-04 | 广播限制适配 | 动态注册 + 应用内广播（已实现） | P1 |
 | SYS-05 | FileProvider 分享 | content:// 分享缓存文件（已实现） | P1 |
 
 ### 16. `feature:view-custom`（Phase 2 进行中）
@@ -246,6 +248,22 @@ app → feature:* → core:*
 | IMG-02 | 缓存策略演示 | 内存/磁盘缓存说明 | P1 |
 | IMG-03 | CameraX / Photo Picker | 进阶 | P2 |
 
+### 19. `feature:performance`（Phase 2 进行中）
+
+| ID | 技术点 | 说明 | 优先级 |
+|----|--------|------|--------|
+| PF-01 | StrictMode | 主线程 DiskWrite / 卡顿演示（已实现） | P1 |
+| PF-02 | 内存泄漏场景 | 单例持有 Activity 对比修复（已实现） | P1 |
+| PF-03 | 启动优化说明 | Application 耗时 + 串行/并行对比（已实现） | P1 |
+
+### 20. `feature:compat`（Phase 2 进行中）
+
+| ID | 技术点 | 说明 | 优先级 |
+|----|--------|------|--------|
+| CP-01 | Android 10–15 行为变更 | 清单 + 当前设备高亮（已实现） | P1 |
+| CP-02 | Scoped Storage | 结合存储 Demo 说明 | P1 |
+| CP-03 | 后台限制 | 位置 / 启动限制进阶 | P1 |
+
 ---
 
 ## Phase 2+ 预留模块
@@ -254,11 +272,9 @@ app → feature:* → core:*
 |------|------------|--------|
 | `feature:view-custom`（其余） | 滑动冲突进阶 | P1 |
 | `feature:animation`（其余） | Transition、Lottie | P2 |
-| `feature:system`（其余） | 广播适配 | P1 |
 | `feature:image`（其余） | CameraX / Photo Picker | P2 |
-| `feature:image` | Coil/Glide、缓存、CameraX | P1 |
-| `feature:performance` | 泄漏场景、卡顿检测、启动优化 | P1 |
-| `feature:compat` | Android 10–15 行为变更、Scoped Storage | P1 |
+| `feature:performance`（其余） | Baseline Profile 等进阶 | P2 |
+| `feature:compat`（其余） | 后台限制实操 | P1 |
 | `architecture:mvi` | Intent / Store / Effect，与 MVVM 对比 | 后续 |
 | 架构切换 | 设置中手动切换 MVVM / MVI | 后续 |
 
@@ -304,7 +320,9 @@ feature:network             NW-01 ~ NW-03
  ├─ 数据存储
  ├─ 网络通信
  ├─ 图片多媒体（Coil）
- ├─ 系统能力（Permission / Notification / Foreground / FileProvider）
+ ├─ 系统能力（Permission / Notification / Foreground / FileProvider / Broadcast）
+ ├─ 性能优化（StrictMode / Leak / Startup）
+ ├─ 安全兼容（Compat）
  └─ 设置
 ```
 
@@ -320,7 +338,7 @@ feature:network             NW-01 ~ NW-03
 
 ## 工程状态
 
-Phase 1 完成；Phase 2 已启动（权限 Demo）。`:app:assembleDebug` 可通过。
+Phase 1 完成；Phase 2 主体 Demo 已较完整。`:app:assembleDebug` 可通过。
 
 | 模块 | 状态 |
 |------|------|
@@ -334,10 +352,12 @@ Phase 1 完成；Phase 2 已启动（权限 Demo）。`:app:assembleDebug` 可�
 | `feature:recycler` | 多 Type + DiffUtil |
 | `feature:storage` | Room / DataStore Lab（Dao / Prefs 由 Hilt 注入） |
 | `feature:network` | Retrofit 列表请求（`PostApi` 由 Hilt 注入） |
-| `feature:system` | Permission / Notification / Foreground / FileProvider |
+| `feature:system` | Permission / Notification / Foreground / FileProvider / Broadcast |
 | `feature:view-custom` | RingProgress 自定义 View（绘制 / 触摸） |
 | `feature:animation` | ObjectAnimator / AnimatorSet / ValueAnimator |
 | `feature:image` | Coil 占位图 / 错误图 / 网络加载 |
+| `feature:performance` | StrictMode + Leak + Startup |
+| `feature:compat` | Android 10–15 行为变更清单 |
 
 ### 运行
 
