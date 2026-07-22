@@ -2,6 +2,12 @@
 <resources>
     <string name="feature_home_title">AndroidKit</string>
     <string name="feature_home_settings">设置</string>
+    <string name="feature_home_favorites">收藏 / 最近</string>
+    <string name="feature_home_favorites_title">收藏与最近浏览</string>
+    <string name="feature_home_favorites_section">我的收藏</string>
+    <string name="feature_home_recent_section">最近浏览</string>
+    <string name="feature_home_favorites_empty">还没有收藏。在 Demo 列表点 ★ 即可收藏。</string>
+    <string name="feature_home_recent_empty">暂无最近浏览记录。</string>
     <string name="feature_home_search_hint">搜索技术点 / 标签</string>
     <string name="feature_home_search_empty">没有匹配的 Demo</string>
 </resources>

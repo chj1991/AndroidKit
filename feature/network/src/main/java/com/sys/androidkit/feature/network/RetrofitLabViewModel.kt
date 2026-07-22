@@ -10,6 +10,8 @@ import kotlinx.coroutines.flow.asStateFlow
 
 data class RetrofitUiState(
     val result: AppResult<List<PostDto>> = AppResult.Loading,
+    val isRefreshing: Boolean = false,
+    val refreshError: String? = null,
 )
 
 @HiltViewModel
@@ -21,20 +23,39 @@ class RetrofitLabViewModel @Inject constructor(
     val uiState: StateFlow<RetrofitUiState> = _uiState.asStateFlow()
 
     init {
-        refresh()
+        refresh(fromSwipe = false)
     }
 
-    fun refresh() {
+    fun refresh(fromSwipe: Boolean = true) {
         launch {
-            _uiState.value = RetrofitUiState(AppResult.Loading)
+            val previous = _uiState.value.result
+            val keepList = fromSwipe && previous is AppResult.Success
+            _uiState.value = if (keepList) {
+                _uiState.value.copy(isRefreshing = true, refreshError = null)
+            } else {
+                RetrofitUiState(result = AppResult.Loading)
+            }
             runCatching { api.getPosts().take(20) }
                 .onSuccess { posts ->
-                    _uiState.value = RetrofitUiState(AppResult.Success(posts))
+                    _uiState.value = RetrofitUiState(
+                        result = AppResult.Success(posts),
+                        isRefreshing = false,
+                    )
                 }
                 .onFailure { error ->
-                    _uiState.value = RetrofitUiState(
-                        AppResult.Error(error.message ?: "网络请求失败", error),
-                    )
+                    val message = error.message ?: "网络请求失败"
+                    _uiState.value = if (keepList) {
+                        RetrofitUiState(
+                            result = previous,
+                            isRefreshing = false,
+                            refreshError = message,
+                        )
+                    } else {
+                        RetrofitUiState(
+                            result = AppResult.Error(message, error),
+                            isRefreshing = false,
+                        )
+                    }
                 }
         }
     }

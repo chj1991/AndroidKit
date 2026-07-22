@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="feature_network_title">Retrofit Lab</string>
+    <string name="feature_network_loading">加载中…</string>
+    <string name="feature_network_error">错误：%1$s</string>
+    <string name="feature_network_refresh_error">刷新失败（已保留旧列表）：%1$s</string>
+    <string name="feature_network_interceptor_title">Interceptor Lab</string>
+    <string name="feature_network_interceptor_hint">HeaderInterceptor 注入 Client / Request-Id / Demo-Token；RequestProbeInterceptor 捕获最终请求头。</string>
+    <string name="feature_network_interceptor_token_hint">X-Demo-Token</string>
+    <string name="feature_network_interceptor_fire">发起请求</string>
+    <string name="feature_network_interceptor_request_label">最终请求</string>
+    <string name="feature_network_interceptor_response_label">响应摘要</string>
+    <string name="feature_network_interceptor_request_placeholder">点击「发起请求」后显示注入后的请求头</string>
+    <string name="feature_network_interceptor_response_placeholder">等待响应…</string>
 </resources>

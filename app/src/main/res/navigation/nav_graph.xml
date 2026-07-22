@@ -20,6 +20,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.sys.androidkit.feature.home.FavoritesFragment"
+        android:label="Favorites">
+        <deepLink app:uri="androidkit://favorites" />
+    </fragment>
+
+    <fragment
         android:id="@+id/settingsFragment"
         android:name="com.sys.androidkit.feature.settings.SettingsFragment"
         android:label="Settings">
@@ -38,6 +45,13 @@
         android:name="com.sys.androidkit.feature.lifecycle.LifecycleLabFragment"
         android:label="Lifecycle">
         <deepLink app:uri="androidkit://demo/lifecycle" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lifecycleObserverFragment"
+        android:name="com.sys.androidkit.feature.lifecycle.LifecycleObserverLabFragment"
+        android:label="LifecycleObserver">
+        <deepLink app:uri="androidkit://demo/lifecycle_observer" />
     </fragment>
 
     <fragment
@@ -76,6 +90,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/touchHelperFragment"
+        android:name="com.sys.androidkit.feature.recycler.TouchHelperLabFragment"
+        android:label="TouchHelper">
+        <deepLink app:uri="androidkit://demo/touch_helper" />
+    </fragment>
+
+    <fragment
         android:id="@+id/roomFragment"
         android:name="com.sys.androidkit.feature.storage.RoomLabFragment"
         android:label="Room">
@@ -90,10 +111,31 @@
     </fragment>
 
     <fragment
+        android:id="@+id/spVsDatastoreFragment"
+        android:name="com.sys.androidkit.feature.storage.SpVsDataStoreLabFragment"
+        android:label="SP vs DataStore">
+        <deepLink app:uri="androidkit://demo/sp_vs_datastore" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mmkvFragment"
+        android:name="com.sys.androidkit.feature.storage.MmkvLabFragment"
+        android:label="MMKV">
+        <deepLink app:uri="androidkit://demo/mmkv" />
+    </fragment>
+
+    <fragment
         android:id="@+id/retrofitFragment"
         android:name="com.sys.androidkit.feature.network.RetrofitLabFragment"
         android:label="Retrofit">
         <deepLink app:uri="androidkit://demo/retrofit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/interceptorFragment"
+        android:name="com.sys.androidkit.feature.network.InterceptorLabFragment"
+        android:label="Interceptor">
+        <deepLink app:uri="androidkit://demo/interceptor" />
     </fragment>
 
     <fragment
@@ -164,6 +206,13 @@
         android:name="com.sys.androidkit.feature.image.ImageLabFragment"
         android:label="Image">
         <deepLink app:uri="androidkit://demo/image" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/coilCacheFragment"
+        android:name="com.sys.androidkit.feature.image.CoilCacheLabFragment"
+        android:label="Coil Cache">
+        <deepLink app:uri="androidkit://demo/coil_cache" />
     </fragment>
 
     <fragment

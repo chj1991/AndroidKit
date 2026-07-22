@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="feature_lifecycle_title">Lifecycle Lab</string>
+    <string name="feature_lifecycle_observer_title">LifecycleObserver Lab</string>
+    <string name="feature_lifecycle_observer_hint">对比 Fragment lifecycle 与 viewLifecycleOwner 上的 DefaultLifecycleObserver。旋转或返回可观察 onDestroy / 重建。</string>
     <string name="feature_lifecycle_clear">清空日志</string>
 </resources>

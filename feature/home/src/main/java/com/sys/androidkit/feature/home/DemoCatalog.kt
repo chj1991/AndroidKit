@@ -7,15 +7,20 @@ object DemoCatalog {
 
     const val DEMO_COUNTER = "counter"
     const val DEMO_LIFECYCLE = "lifecycle"
+    const val DEMO_LIFECYCLE_OBSERVER = "lifecycle_observer"
     const val DEMO_COROUTINE = "coroutine"
     const val DEMO_FLOW = "flow"
     const val DEMO_WORK = "work"
     const val DEMO_STRUCTURED = "structured"
     const val DEMO_RECYCLER = "recycler"
+    const val DEMO_TOUCH_HELPER = "touch_helper"
     const val DEMO_NESTED_SCROLL = "nested_scroll"
     const val DEMO_ROOM = "room"
     const val DEMO_DATASTORE = "datastore"
+    const val DEMO_SP_VS_DATASTORE = "sp_vs_datastore"
+    const val DEMO_MMKV = "mmkv"
     const val DEMO_RETROFIT = "retrofit"
+    const val DEMO_INTERCEPTOR = "interceptor"
     const val DEMO_PERMISSION = "permission"
     const val DEMO_NOTIFICATION = "notification"
     const val DEMO_CUSTOM_VIEW = "custom_view"
@@ -25,6 +30,7 @@ object DemoCatalog {
     const val DEMO_LOTTIE = "lottie"
     const val DEMO_MOTION = "motion"
     const val DEMO_IMAGE = "image"
+    const val DEMO_COIL_CACHE = "coil_cache"
     const val DEMO_PHOTO_PICKER = "photo_picker"
     const val DEMO_CUSTOM_IMAGE_PICKER = "custom_image_picker"
     const val DEMO_CAMERAX = "camerax"
@@ -62,6 +68,12 @@ object DemoCatalog {
                     title = "Lifecycle Lab",
                     summary = "生命周期回调日志墙",
                     tags = listOf("Lifecycle"),
+                ),
+                DemoItem(
+                    id = DEMO_LIFECYCLE_OBSERVER,
+                    title = "LifecycleObserver Lab",
+                    summary = "DefaultLifecycleObserver：Fragment vs viewLifecycle",
+                    tags = listOf("Lifecycle", "Observer"),
                 ),
             ),
         ),
@@ -108,6 +120,12 @@ object DemoCatalog {
                     tags = listOf("RecyclerView", "DiffUtil"),
                 ),
                 DemoItem(
+                    id = DEMO_TOUCH_HELPER,
+                    title = "TouchHelper Lab",
+                    summary = "ItemDecoration + 拖拽排序 / 侧滑删除",
+                    tags = listOf("ItemTouchHelper", "ItemDecoration"),
+                ),
+                DemoItem(
                     id = DEMO_CUSTOM_VIEW,
                     title = "Custom View Lab",
                     summary = "onMeasure / onDraw / 触摸改进度",
@@ -148,19 +166,31 @@ object DemoCatalog {
         DemoCategory(
             id = "storage",
             title = "数据存储",
-            description = "Room / DataStore",
+            description = "Room / DataStore / MMKV",
             demos = listOf(
                 DemoItem(
                     id = DEMO_ROOM,
                     title = "Room Lab",
-                    summary = "增删改查与 Flow 观察",
-                    tags = listOf("Room"),
+                    summary = "CRUD + Flow；Migration v2 + TypeConverter(tags)",
+                    tags = listOf("Room", "Migration", "TypeConverter"),
                 ),
                 DemoItem(
                     id = DEMO_DATASTORE,
                     title = "DataStore Lab",
                     summary = "Preferences DataStore 读写",
                     tags = listOf("DataStore"),
+                ),
+                DemoItem(
+                    id = DEMO_SP_VS_DATASTORE,
+                    title = "SP vs DataStore",
+                    summary = "同步 SP 与异步 DataStore 对比",
+                    tags = listOf("SharedPreferences", "DataStore"),
+                ),
+                DemoItem(
+                    id = DEMO_MMKV,
+                    title = "MMKV Lab",
+                    summary = "腾讯 MMKV 封装：String/Int/Boolean",
+                    tags = listOf("MMKV", "KV"),
                 ),
             ),
         ),
@@ -172,8 +202,14 @@ object DemoCatalog {
                 DemoItem(
                     id = DEMO_RETROFIT,
                     title = "Retrofit Lab",
-                    summary = "列表请求与 Loading/Error",
-                    tags = listOf("Retrofit", "OkHttp"),
+                    summary = "列表请求 + SwipeRefresh（刷新保留旧列表）",
+                    tags = listOf("Retrofit", "SwipeRefresh"),
+                ),
+                DemoItem(
+                    id = DEMO_INTERCEPTOR,
+                    title = "Interceptor Lab",
+                    summary = "HeaderInterceptor 注入请求头并探测最终 Request",
+                    tags = listOf("OkHttp", "Interceptor"),
                 ),
             ),
         ),
@@ -187,6 +223,12 @@ object DemoCatalog {
                     title = "Image Lab（Coil）",
                     summary = "占位图 / 错误图 / 缓存加载",
                     tags = listOf("Coil", "Image"),
+                ),
+                DemoItem(
+                    id = DEMO_COIL_CACHE,
+                    title = "Coil Cache Lab",
+                    summary = "memory / disk CachePolicy 对比",
+                    tags = listOf("Coil", "Cache"),
                 ),
                 DemoItem(
                     id = DEMO_PHOTO_PICKER,

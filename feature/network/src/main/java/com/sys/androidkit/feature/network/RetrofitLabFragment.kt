@@ -31,29 +31,36 @@ class RetrofitLabFragment : BaseFragment<FragmentRetrofitBinding>() {
         binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
         binding.rvPosts.layoutManager = LinearLayoutManager(requireContext())
         binding.rvPosts.adapter = adapter
-        binding.swipeRefresh.setOnRefreshListener { viewModel.refresh() }
+        binding.swipeRefresh.setOnRefreshListener { viewModel.refresh(fromSwipe = true) }
     }
 
     override fun initObserver() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { state ->
+                    binding.swipeRefresh.isRefreshing =
+                        state.isRefreshing || state.result is AppResult.Loading
                     when (val result = state.result) {
                         AppResult.Loading -> {
-                            binding.swipeRefresh.isRefreshing = true
                             binding.tvStatus.isVisible = true
-                            binding.tvStatus.text = "加载中…"
+                            binding.tvStatus.text = getString(R.string.feature_network_loading)
                             adapter.submitList(emptyList())
                         }
                         is AppResult.Success -> {
-                            binding.swipeRefresh.isRefreshing = false
-                            binding.tvStatus.isVisible = false
                             adapter.submitList(result.data)
+                            val refreshError = state.refreshError
+                            if (refreshError != null) {
+                                binding.tvStatus.isVisible = true
+                                binding.tvStatus.text =
+                                    getString(R.string.feature_network_refresh_error, refreshError)
+                            } else {
+                                binding.tvStatus.isVisible = false
+                            }
                         }
                         is AppResult.Error -> {
-                            binding.swipeRefresh.isRefreshing = false
                             binding.tvStatus.isVisible = true
-                            binding.tvStatus.text = "错误：${result.message}"
+                            binding.tvStatus.text =
+                                getString(R.string.feature_network_error, result.message)
                             adapter.submitList(emptyList())
                         }
                     }

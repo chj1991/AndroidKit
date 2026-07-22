@@ -7,6 +7,7 @@ import com.sys.androidkit.core.common.log.AppLog
 import com.sys.androidkit.core.common.startup.StartupTrace
 import com.sys.androidkit.core.datastore.AppPreferences
 import com.sys.androidkit.core.datastore.ThemeMode
+import com.sys.androidkit.feature.storage.mmkv.MmkvInitializer
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
@@ -27,7 +28,8 @@ class AndroidKitApp : Application() {
         val start = SystemClock.elapsedRealtime()
         super.onCreate()
         AppLog.enabled = BuildConfig.DEBUG
-        AppLog.i("AndroidKitApp started")
+        val mmkvRoot = MmkvInitializer.init(this)
+        AppLog.i("AndroidKitApp started, mmkvRoot=$mmkvRoot")
         observeTheme()
         val cost = SystemClock.elapsedRealtime() - start
         StartupTrace.markAppCreate(

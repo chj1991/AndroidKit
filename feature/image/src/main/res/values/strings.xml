@@ -27,4 +27,11 @@
     <string name="feature_image_camerax_permission">申请相机权限</string>
     <string name="feature_image_camerax_capture">拍照</string>
     <string name="feature_image_camerax_tips">要点：CameraX 用 lifecycle 绑定 Preview + ImageCapture；拍照写入 cacheDir。模拟器需虚拟场景或 webcam。</string>
+    <string name="feature_image_cache_title">Coil Cache Lab</string>
+    <string name="feature_image_cache_tips">要点：Coil 可分别控制 memoryCachePolicy / diskCachePolicy。同一 URL 二次加载时观察 dataSource（MEMORY_CACHE / DISK / NETWORK）。</string>
+    <string name="feature_image_cache_default">默认双缓存</string>
+    <string name="feature_image_cache_memory">仅内存</string>
+    <string name="feature_image_cache_disk">仅磁盘</string>
+    <string name="feature_image_cache_disabled">禁用缓存</string>
+    <string name="feature_image_cache_load">按当前策略加载</string>
 </resources>

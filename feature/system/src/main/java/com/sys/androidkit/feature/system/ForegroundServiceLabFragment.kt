@@ -57,11 +57,10 @@ class ForegroundServiceLabFragment : BaseFragment<FragmentForegroundServiceBindi
                 Manifest.permission.POST_NOTIFICATIONS,
             ) == PackageManager.PERMISSION_GRANTED
             if (!granted) {
-                Snackbar.make(
-                    binding.root,
-                    R.string.feature_system_fg_need_notification,
-                    Snackbar.LENGTH_LONG,
-                ).show()
+                showMessage(
+                    messageRes = R.string.feature_system_fg_need_notification,
+                    length = Snackbar.LENGTH_LONG,
+                )
                 return
             }
         }

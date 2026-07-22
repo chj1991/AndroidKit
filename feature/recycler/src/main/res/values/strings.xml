@@ -2,4 +2,7 @@
 <resources>
     <string name="feature_recycler_title">Recycler Lab</string>
     <string name="feature_recycler_shuffle">打乱并 Diff</string>
+    <string name="feature_recycler_touch_title">TouchHelper Lab</string>
+    <string name="feature_recycler_touch_tips">要点：ItemDecoration 画间距/分割线；ItemTouchHelper 处理拖拽与侧滑。拖拽过程用 notifyItemMoved，避免 ListAdapter Diff 干扰手势。</string>
+    <string name="feature_recycler_touch_reset">重置列表</string>
 </resources>

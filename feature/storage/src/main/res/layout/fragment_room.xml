@@ -10,6 +10,14 @@
         android:layout_height="?attr/actionBarSize"
         android:title="@string/feature_storage_room_title" />
 
+    <TextView
+        android:id="@+id/tvTips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:textAppearance="?attr/textAppearanceBodyMedium" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"

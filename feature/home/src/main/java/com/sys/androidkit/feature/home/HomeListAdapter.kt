@@ -1,6 +1,7 @@
 package com.sys.androidkit.feature.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -66,6 +67,7 @@ class HomeListAdapter(
             binding.tvTitle.text = item.data.title
             binding.tvSummary.text = item.data.summary
             binding.tvTags.text = item.data.tags.joinToString(" · ")
+            binding.btnFavorite.visibility = View.GONE
             binding.root.setOnClickListener { onDemoClick(item) }
         }
     }

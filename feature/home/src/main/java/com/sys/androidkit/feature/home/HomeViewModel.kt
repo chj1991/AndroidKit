@@ -2,6 +2,7 @@ package com.sys.androidkit.feature.home
 
 import com.sys.androidkit.core.common.model.DemoCategory
 import com.sys.androidkit.core.common.model.DemoItem
+import com.sys.androidkit.core.datastore.AppPreferences
 import com.sys.androidkit.core.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -22,7 +23,9 @@ data class HomeUiState(
 )
 
 @HiltViewModel
-class HomeViewModel @Inject constructor() : BaseViewModel() {
+class HomeViewModel @Inject constructor(
+    private val prefs: AppPreferences,
+) : BaseViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
@@ -52,5 +55,9 @@ class HomeViewModel @Inject constructor() : BaseViewModel() {
                 isEmpty = demos.isEmpty(),
             )
         }
+    }
+
+    fun recordRecent(demoId: String) {
+        launch { prefs.recordRecent(demoId) }
     }
 }

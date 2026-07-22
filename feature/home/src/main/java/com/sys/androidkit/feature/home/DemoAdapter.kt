@@ -10,12 +10,19 @@ import com.sys.androidkit.feature.home.databinding.ItemDemoBinding
 
 class DemoAdapter(
     private val onClick: (DemoItem) -> Unit,
-) : ListAdapter<DemoItem, DemoAdapter.VH>(Diff) {
+    private val onFavoriteClick: ((DemoItem) -> Unit)? = null,
+) : ListAdapter<DemoListRow, DemoAdapter.VH>(Diff) {
 
-    object Diff : DiffUtil.ItemCallback<DemoItem>() {
-        override fun areItemsTheSame(oldItem: DemoItem, newItem: DemoItem) = oldItem.id == newItem.id
+    object Diff : DiffUtil.ItemCallback<DemoListRow>() {
+        override fun areItemsTheSame(oldItem: DemoListRow, newItem: DemoListRow) =
+            oldItem.demo.id == newItem.demo.id
 
-        override fun areContentsTheSame(oldItem: DemoItem, newItem: DemoItem) = oldItem == newItem
+        override fun areContentsTheSame(oldItem: DemoListRow, newItem: DemoListRow) =
+            oldItem == newItem
+    }
+
+    fun submitDemos(demos: List<DemoItem>, favorites: Set<String> = emptySet()) {
+        submitList(demos.map { DemoListRow(it, it.id in favorites) })
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
@@ -30,10 +37,13 @@ class DemoAdapter(
     inner class VH(
         private val binding: ItemDemoBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: DemoItem) {
+        fun bind(row: DemoListRow) {
+            val item = row.demo
             binding.tvTitle.text = item.title
             binding.tvSummary.text = item.summary
             binding.tvTags.text = item.tags.joinToString(" · ")
+            binding.btnFavorite.text = if (row.favorite) "★" else "☆"
+            binding.btnFavorite.setOnClickListener { onFavoriteClick?.invoke(item) }
             binding.root.setOnClickListener { onClick(item) }
         }
     }

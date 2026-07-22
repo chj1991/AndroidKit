@@ -86,7 +86,7 @@ app → feature:* → core:*
 | APP-02 | 单 Activity | `MainActivity` + NavHost | P0 |
 | APP-03 | Navigation 集成 | 跨 feature 导航、参数传递 | P0 |
 | APP-04 | 深色模式 | 跟随系统 / 手动 | P1 |
-| APP-05 | 启动主题 | Splash / Theme / 状态栏 | P1 |
+| APP-05 | 启动主题 | SplashScreen + 透明系统栏（已落地） | P1 |
 
 ### 2. `core:common`
 
@@ -106,7 +106,7 @@ app → feature:* → core:*
 | UI-02 | Demo 列表 Item | 目录卡片、说明区布局 | P0 |
 | UI-03 | 主题与资源 | color / typography | P0 |
 | UI-04 | 状态视图 | Loading / Empty / Error | P0 |
-| UI-05 | 弹窗 / Snackbar 封装 | 统一提示 | P1 |
+| UI-05 | 弹窗 / Snackbar 封装 | `showSnackbar` / `showConfirmDialog`（已落地） | P1 |
 | UI-06 | 屏幕适配约定 | 尺寸、WindowInsets | P1 |
 
 ### 4. `core:datastore`
@@ -114,7 +114,7 @@ app → feature:* → core:*
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
 | DS-01 | Preferences DataStore | 读写封装 | P0 |
-| DS-02 | 收藏 / 最近浏览 | 本地记录 | P1 |
+| DS-02 | 收藏 / 最近浏览 | DataStore 本地记录（已落地） | P1 |
 | DS-03 | 主题偏好 | 与设置页联动 | P1 |
 
 ### 5. `core:database`
@@ -123,8 +123,8 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | DB-01 | Room 基础 | Entity / Dao / Database | P0 |
 | DB-02 | 协程 / Flow 查询 | 响应式列表 | P0 |
-| DB-03 | Migration | 版本升级示例 | P1 |
-| DB-04 | TypeConverter | 复杂字段 | P1 |
+| DB-03 | Migration | `MIGRATION_1_2` tags/updatedAt（已落地） | P1 |
+| DB-04 | TypeConverter | `List<String>` tags（已落地） | P1 |
 | DB-05 | 关系查询 | 一对多（可选） | P2 |
 
 ### 6. `core:network`
@@ -134,7 +134,7 @@ app → feature:* → core:*
 | NET-01 | OkHttp 客户端 | 超时、日志拦截器 | P0 |
 | NET-02 | Retrofit 封装 | 接口、Converter | P0 |
 | NET-03 | 统一错误处理 | HTTP / 业务错误映射 | P0 |
-| NET-04 | 请求头拦截器 | 演示向 | P1 |
+| NET-04 | 请求头拦截器 | HeaderInterceptor + Probe（已落地） | P1 |
 | NET-05 | 缓存策略 | 基础 Cache | P2 |
 
 ### 7. `feature:home`
@@ -145,7 +145,7 @@ app → feature:* → core:*
 | HOME-02 | Demo 列表 | 分类下技术点列表 | P0 |
 | HOME-03 | 本地目录数据 | `DemoCatalog` 静态配置 | P0 |
 | HOME-04 | 搜索 | 标题 / 标签 / 摘要过滤（已实现） | P1 |
-| HOME-05 | 收藏入口 | 跳转收藏列表 | P1 |
+| HOME-05 | 收藏入口 | 菜单跳转收藏/最近（已落地） | P1 |
 
 ### 8. `feature:settings`
 
@@ -170,7 +170,7 @@ app → feature:* → core:*
 | LC-01 | Activity 生命周期墙 | 回调日志可视化 | P0 |
 | LC-02 | Fragment 生命周期墙 | 与 Activity 对照 | P0 |
 | LC-03 | 进程 / 重建场景 | 旋转、后台回收说明 | P1 |
-| LC-04 | LifecycleObserver | 自定义观察者 | P1 |
+| LC-04 | LifecycleObserver | DefaultLifecycleObserver 对比（已落地） | P1 |
 
 ### 11. `feature:async`
 
@@ -190,17 +190,18 @@ app → feature:* → core:*
 | RV-01 | 多 Type 列表 | 标题 / 内容等 | P0 |
 | RV-02 | DiffUtil / ListAdapter | 局部刷新 | P0 |
 | RV-03 | 点击 / 长按 | 事件回调 | P0 |
-| RV-04 | ItemDecoration | 分割线 / 间距 | P1 |
-| RV-05 | 侧滑 / 拖拽 | ItemTouchHelper | P2 |
+| RV-04 | ItemDecoration | 分割线 / 间距（TouchHelper Lab 已落地） | P1 |
+| RV-05 | 侧滑 / 拖拽 | ItemTouchHelper（TouchHelper Lab 已落地） | P2 |
 
 ### 13. `feature:storage`
 
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
-| ST-01 | Room CRUD | 增删改查列表 | P0 |
+| ST-01 | Room CRUD | 增删改查 + Migration/TypeConverter 展示（已增强） | P0 |
 | ST-02 | DataStore 读写 | 偏好示例 | P0 |
-| ST-03 | SP vs DataStore | 对比说明 | P1 |
+| ST-03 | SP vs DataStore | 同页双写对比（已落地） | P1 |
 | ST-04 | 文件存储路径 | 内部 / 缓存说明 | P2 |
+| ST-05 | MMKV | 腾讯 MMKV 封装 + String/Int/Boolean Demo（已落地） | P1 |
 
 ### 14. `feature:network`
 
@@ -209,8 +210,9 @@ app → feature:* → core:*
 | NW-01 | Retrofit 列表请求 | Loading / Success / Error | P0 |
 | NW-02 | 协程挂起接口 | suspend API | P0 |
 | NW-03 | 错误态展示 | 超时、4xx/5xx | P0 |
-| NW-04 | 下拉刷新 | SwipeRefresh | P1 |
+| NW-04 | 下拉刷新 | SwipeRefresh，刷新保留旧列表（已落地） | P1 |
 | NW-05 | 上传下载进度 | 可选 | P2 |
+| NW-06 | 请求头拦截器 | Interceptor Lab（已落地） | P1 |
 
 ---
 
@@ -247,7 +249,7 @@ app → feature:* → core:*
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
 | IMG-01 | Coil 加载 | 成功 / 失败 / 占位图（已实现） | P1 |
-| IMG-02 | 缓存策略演示 | 内存/磁盘缓存说明 | P1 |
+| IMG-02 | 缓存策略演示 | Coil memory/disk CachePolicy（已落地） | P1 |
 | IMG-03 | Photo Picker | 系统选择器 + content Uri（已落地） | P2 |
 | IMG-04 | 自定义图片选择 | 独立选择页 + Fragment Result 回传；张数默认 1 单选，>1 多选（已落地） | P2 |
 | IMG-05 | CameraX | Preview + ImageCapture 拍照（已落地） | P2 |
@@ -295,9 +297,9 @@ feature:settings            SET-01
 feature:sample-counter      CTR-01 ~ CTR-03
 feature:lifecycle           LC-01 ~ LC-02
 feature:async               ASY-01 ~ ASY-06
-feature:recycler            RV-01 ~ RV-03
-feature:storage             ST-01 ~ ST-02
-feature:network             NW-01 ~ NW-03
+feature:recycler            RV-01 ~ RV-05
+feature:storage             ST-01 ~ ST-03, ST-05
+feature:network             NW-01 ~ NW-04
 ```
 
 ### Phase 1 完成标准
@@ -318,7 +320,7 @@ feature:network             NW-01 ~ NW-03
  ├─ 生命周期
  ├─ 异步并发（Coroutine / Flow / WorkManager）
  ├─ UI 界面（… / Transition / Lottie / MotionLayout）
- ├─ 数据存储
+ ├─ 数据存储（Room / DataStore / MMKV）
  ├─ 网络通信
  ├─ 图片多媒体（Coil / Photo Picker / Custom Picker / CameraX）
  ├─ 系统能力（Permission / Notification / Foreground / FileProvider / Broadcast）
@@ -343,20 +345,20 @@ Phase 1 完成；Phase 2 主体 Demo 已较完整。`:app:assembleDebug` 可通�
 
 | 模块 | 状态 |
 |------|------|
-| `app` | 单 Activity + Navigation + Deep Link + Hilt `AppModule` |
-| `core:*` | common / ui / datastore / database / network 已就绪 |
-| `feature:home` | 分类首页 + Demo 列表 + 搜索 |
+| `app` | 单 Activity + SplashScreen + Navigation + Deep Link + Hilt |
+| `core:*` | common / ui(Snackbar·Dialog) / datastore / database(Migration) / network |
+| `feature:home` | 分类首页 + Demo 列表 + 搜索 + 收藏/最近 |
 | `feature:settings` | 设置页 + DataStore 主题切换（跟随系统 / 浅色 / 深色） |
 | `feature:sample-counter` | Counter MVVM + `@HiltViewModel` |
-| `feature:lifecycle` | 生命周期日志墙 |
+| `feature:lifecycle` | 生命周期日志墙；LifecycleObserver Lab |
 | `feature:async` | Coroutine / Flow / WorkManager / Structured Concurrency |
-| `feature:recycler` | 多 Type + DiffUtil |
-| `feature:storage` | Room / DataStore Lab（Dao / Prefs 由 Hilt 注入） |
-| `feature:network` | Retrofit 列表请求（`PostApi` 由 Hilt 注入） |
+| `feature:recycler` | 多 Type + DiffUtil；TouchHelper（装饰/拖拽/侧滑） |
+| `feature:storage` | Room(CRUD+Migration+TypeConverter) / DataStore / SP vs DS / MMKV |
+| `feature:network` | Retrofit + SwipeRefresh；Interceptor Lab |
 | `feature:system` | Permission / Notification / Foreground / FileProvider / Broadcast |
 | `feature:view-custom` | RingProgress；Nested Scroll 滑动冲突 |
 | `feature:animation` | 属性动画；Transition；Lottie；MotionLayout |
-| `feature:image` | Coil；Photo Picker；自定义选图；CameraX |
+| `feature:image` | Coil / Cache；Photo Picker；自定义选图；CameraX |
 | `feature:performance` | StrictMode + Leak + Startup + Baseline Profile |
 | `feature:compat` | 行为变更清单；Scoped Storage；后台限制 |
 
@@ -373,6 +375,7 @@ Phase 1 完成；Phase 2 主体 Demo 已较完整。`:app:assembleDebug` 可通�
 
 - `androidkit://category/{categoryId}`
 - `androidkit://demo/{demoId}`
+- `androidkit://favorites`
 - `androidkit://settings`
 
 ### Hilt 约定

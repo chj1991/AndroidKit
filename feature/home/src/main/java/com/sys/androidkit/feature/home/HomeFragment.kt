@@ -27,6 +27,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             navigate("androidkit://category/${item.data.id}")
         },
         onDemoClick = { item ->
+            viewModel.recordRecent(item.data.id)
             navigate("androidkit://demo/${item.data.id}")
         },
     )
@@ -39,11 +40,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun initView() {
         binding.toolbar.inflateMenu(R.menu.menu_home)
         binding.toolbar.setOnMenuItemClickListener { item ->
-            if (item.itemId == R.id.action_settings) {
-                navigate("androidkit://settings")
-                true
-            } else {
-                false
+            when (item.itemId) {
+                R.id.action_favorites -> {
+                    navigate("androidkit://favorites")
+                    true
+                }
+                R.id.action_settings -> {
+                    navigate("androidkit://settings")
+                    true
+                }
+                else -> false
             }
         }
         binding.rvContent.layoutManager = LinearLayoutManager(requireContext())

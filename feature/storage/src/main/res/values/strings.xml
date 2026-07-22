@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="feature_storage_room_title">Room Lab</string>
+    <string name="feature_storage_room_tips">要点：当前 DB version=%1$d。v1→v2 经 MIGRATION_1_2 增加 tags / updatedAt；tags 用 TypeConverter 存为逗号分隔 TEXT。删除可撤销。</string>
+    <string name="feature_storage_room_tags_empty">无标签</string>
+    <string name="feature_storage_room_added">已新增：%1$s</string>
+    <string name="feature_storage_room_deleted">已删除：%1$s</string>
+    <string name="feature_storage_room_undo">撤销</string>
+    <string name="feature_storage_room_delete_title">删除笔记</string>
+    <string name="feature_storage_room_delete_message">确认删除「%1$s」？</string>
     <string name="feature_storage_datastore_title">DataStore Lab</string>
     <string name="feature_storage_add">新增笔记</string>
     <string name="feature_storage_delete">删除</string>
     <string name="feature_storage_theme_system">SYSTEM</string>
     <string name="feature_storage_theme_light">LIGHT</string>
     <string name="feature_storage_theme_dark">DARK</string>
+    <string name="feature_storage_sp_ds_title">SP vs DataStore</string>
+    <string name="feature_storage_sp_ds_tips">要点：SharedPreferences 同步易用但主线程风险与类型弱；DataStore 异步、类型安全、可 Flow 观察。新项目优先 DataStore。</string>
+    <string name="feature_storage_sp_ds_hint">写入同一语义 nickname</string>
+    <string name="feature_storage_sp_ds_write">同时写入 SP + DataStore</string>
+    <string name="feature_storage_sp_ds_clear">清空两者</string>
+    <string name="feature_storage_sp_value">SharedPreferences：%1$s</string>
+    <string name="feature_storage_ds_value">DataStore（Flow）：%1$s</string>
+    <string name="feature_storage_mmkv_title">MMKV Lab</string>
+    <string name="feature_storage_mmkv_tips">要点：腾讯 MMKV 基于 mmap，同步 API、写入即持久化。对比 SP：更快、多进程友好；对比 DataStore：无 Flow，适合简单高频 KV。封装见 MmkvStore。</string>
+    <string name="feature_storage_mmkv_nickname_hint">nickname</string>
+    <string name="feature_storage_mmkv_save">保存 String</string>
+    <string name="feature_storage_mmkv_inc">Int +1</string>
+    <string name="feature_storage_mmkv_toggle">切换 Boolean</string>
+    <string name="feature_storage_mmkv_clear">清除 Demo Keys</string>
+    <string name="feature_storage_mmkv_nickname">nickname：%1$s</string>
+    <string name="feature_storage_mmkv_counter">counter：%1$d</string>
+    <string name="feature_storage_mmkv_flag">flag：%1$s</string>
+    <string name="feature_storage_mmkv_meta">keys=%1$d，totalSize=%2$d\n%3$s</string>
 </resources>
