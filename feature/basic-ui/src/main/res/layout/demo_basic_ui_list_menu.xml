@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 对照 BasicUI MultiMenuActivity：仿 58 多条目菜单筛选 -->
+<com.peakmain.ui.widget.menu.ListMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/listMenuView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:duration="200"
+    app:maxHeightPercent="65"
+    app:shadowColor="@color/black_alpha_40"
+    app:subMenuViewId="@layout/demo_basic_ui_menu_sub_content" />

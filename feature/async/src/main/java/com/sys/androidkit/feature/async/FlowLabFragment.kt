@@ -25,14 +25,26 @@ class FlowLabFragment : BaseFragment<FragmentFlowBinding>() {
     override fun initView() {
         binding.toolbar.setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
         binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
-        binding.btnEmit.setOnClickListener { viewModel.emitEvent() }
+        binding.btnCold.setOnClickListener { viewModel.runColdFlow() }
+        binding.btnHot.setOnClickListener { viewModel.runHotShareIn() }
+        binding.btnState.setOnClickListener { viewModel.bumpStateFlow() }
+        binding.btnShared.setOnClickListener { viewModel.emitSharedEvent() }
+        binding.btnReplay.setOnClickListener { viewModel.demoReplaySharedFlow() }
+        binding.btnOperators.setOnClickListener { viewModel.runOperators() }
+        binding.btnCollectLatest.setOnClickListener { viewModel.runCollectLatest() }
+        binding.btnClear.setOnClickListener { viewModel.clearLog() }
     }
 
     override fun initObserver() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { state ->
-                    binding.tvFlow.text = "ticks=${state.ticks}\nlast=${state.lastEvent}"
+                    binding.tvMeta.text = getString(
+                        R.string.feature_async_flow_meta,
+                        state.stateCounter,
+                        state.sharedCount,
+                    )
+                    binding.tvLog.text = state.log
                 }
             }
         }

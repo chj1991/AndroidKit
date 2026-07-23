@@ -19,6 +19,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://jitpack.io")
     }
 }
 
@@ -31,6 +32,8 @@ include(":core:ui")
 include(":core:datastore")
 include(":core:database")
 include(":core:network")
+include(":core:basicui")
+include(":core:androidktx")
 
 include(":feature:home")
 include(":feature:settings")
@@ -42,7 +45,14 @@ include(":feature:storage")
 include(":feature:network")
 include(":feature:system")
 include(":feature:view-custom")
+include(":feature:components")
+include(":feature:basic-ui")
+include(":feature:android-ktx")
+include(":feature:charts")
+include(":feature:charts-custom")
 include(":feature:animation")
 include(":feature:image")
 include(":feature:performance")
 include(":feature:compat")
+
+include(":benchmark")

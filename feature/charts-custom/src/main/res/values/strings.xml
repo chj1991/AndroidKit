@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_charts_custom_title">Custom Chart Lab</string>
+    <string name="feature_charts_custom_tips">纯自定义 View + Canvas：无第三方图表库。演示 onDraw、坐标映射、扇区角度与 ValueAnimator 入场动画。</string>
+    <string name="feature_charts_custom_line">折线</string>
+    <string name="feature_charts_custom_bar">柱状</string>
+    <string name="feature_charts_custom_pie">饼图</string>
+    <string name="feature_charts_custom_radar">雷达</string>
+    <string name="feature_charts_custom_refresh">刷新数据</string>
+    <string name="feature_charts_custom_animate">重播动画</string>
+</resources>

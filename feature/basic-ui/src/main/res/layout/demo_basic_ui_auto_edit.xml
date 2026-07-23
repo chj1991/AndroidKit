@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 对照 BasicUI AutoEditTextActivity + Wiki 自定义属性 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:text="示例 1：圆角蓝底 + 白字 + tint 清除按钮（官方 select_bg）"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <com.peakmain.ui.widget.AutoDeleteEditText
+        android:id="@+id/autoEditName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/demo_adet_select_bg"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        app:adet_hint="请输入姓名"
+        app:adet_hint_color="@color/ui_color_F5F5F5"
+        app:adet_isSingle="true"
+        app:adet_text_color="@android:color/white"
+        app:adet_text_size="16sp"
+        app:adet_tint_color="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="示例 2：密码框 + numberPassword + 清除 tint"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <com.peakmain.ui.widget.AutoDeleteEditText
+        android:id="@+id/autoEditPwd"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/demo_adet_check_bg"
+        android:inputType="numberPassword"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        app:adet_hint="请输入密码"
+        app:adet_hint_color="#9B9B9B"
+        app:adet_isSingle="true"
+        app:adet_max_length="6"
+        app:adet_text_color="#4A4A4A"
+        app:adet_text_size="16sp"
+        app:adet_tint_color="@color/ui_color_F5F5F5" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="示例 3：多行居上 + paddingTop（adet_isTop）"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <com.peakmain.ui.widget.AutoDeleteEditText
+        android:id="@+id/autoEditMulti"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@drawable/demo_adet_check_bg"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        app:adet_hint="请输入详细地址"
+        app:adet_hint_color="#9B9B9B"
+        app:adet_isTop="true"
+        app:adet_padding_top="12dp"
+        app:adet_text_color="#4A4A4A"
+        app:adet_text_size="16sp"
+        app:adet_tint_color="@android:color/white" />
+</LinearLayout>

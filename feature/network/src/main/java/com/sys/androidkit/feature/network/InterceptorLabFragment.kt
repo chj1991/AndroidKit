@@ -48,6 +48,8 @@ class InterceptorLabFragment : BaseFragment<FragmentInterceptorBinding>() {
                     }
                     binding.tvError.isVisible = state.error != null
                     binding.tvError.text = state.error.orEmpty()
+                    binding.tvMetrics.isVisible = state.metricsText.isNotBlank()
+                    binding.tvMetrics.text = state.metricsText
                 }
             }
         }

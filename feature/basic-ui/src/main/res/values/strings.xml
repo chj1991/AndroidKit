@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_basic_ui_hub_title">BasicUI 组件</string>
+    <string name="feature_basic_ui_hub_tips">源码来自 Peakmain/BasicUI（已接入 :core:basicui，包名 com.peakmain.ui）。文档：github.com/Peakmain/BasicUI/wiki。点条目进入交互示例。</string>
+    <string name="feature_basic_ui_search">搜索组件 / Wiki 标题</string>
+    <string name="feature_basic_ui_filter_all">全部</string>
+    <string name="feature_basic_ui_filter_widget">控件</string>
+    <string name="feature_basic_ui_filter_rv">RecyclerView</string>
+    <string name="feature_basic_ui_filter_utils">工具</string>
+    <string name="feature_basic_ui_count">共 %1$d 项</string>
+    <string name="feature_basic_ui_wiki">Wiki：%1$s</string>
+    <string name="feature_basic_ui_group_widget">控件</string>
+    <string name="feature_basic_ui_group_rv">列表</string>
+    <string name="feature_basic_ui_group_utils">工具</string>
+</resources>

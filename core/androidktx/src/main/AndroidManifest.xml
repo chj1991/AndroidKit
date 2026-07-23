@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <provider
+            android:name="com.dengzii.ktx.KtxInitFileProvider"
+            android:authorities="${applicationId}.ktx.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="androidx.core.FILE_PROVIDER_PATHS"
+                android:resource="@xml/ktx_provider_path" />
+        </provider>
+    </application>
+</manifest>

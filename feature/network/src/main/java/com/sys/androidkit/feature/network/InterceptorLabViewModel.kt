@@ -1,10 +1,14 @@
 package com.sys.androidkit.feature.network
 
+import com.sys.androidkit.core.network.BuildConfig
 import com.sys.androidkit.core.network.HeaderInterceptor
+import com.sys.androidkit.core.network.NetworkErrorMapper
+import com.sys.androidkit.core.network.NetworkLogging
+import com.sys.androidkit.core.network.NetworkModule
+import com.sys.androidkit.core.network.NetworkMonitor
 import com.sys.androidkit.core.network.RequestProbeInterceptor
 import com.sys.androidkit.core.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,9 +20,10 @@ import okhttp3.Request
 
 data class InterceptorUiState(
     val loading: Boolean = false,
-    val token: String = "demo-token",
+    val token: String = "demo-token-secret",
     val probedSummary: String = "",
     val responseSummary: String = "",
+    val metricsText: String = "",
     val error: String? = null,
 )
 
@@ -32,16 +37,20 @@ class InterceptorLabViewModel @Inject constructor() : BaseViewModel() {
     private var lastProbe: RequestProbeInterceptor.ProbedRequest? = null
 
     private val client: OkHttpClient by lazy {
-        OkHttpClient.Builder()
-            .connectTimeout(15, TimeUnit.SECONDS)
-            .readTimeout(15, TimeUnit.SECONDS)
+        // 顺序：Header（含 Token）→ 脱敏日志 → Probe → 网络
+        NetworkModule.newClientBuilder(
+            includeDefaultHeaders = false,
+            includeLogging = false,
+        )
             .addInterceptor(
                 HeaderInterceptor(
+                    clientName = "AndroidKit-InterceptorLab",
                     extraHeaders = {
                         mapOf(HeaderInterceptor.HEADER_DEMO_TOKEN to _uiState.value.token)
                     },
                 ),
             )
+            .addInterceptor(NetworkLogging.createInterceptor(BuildConfig.DEBUG))
             .addInterceptor(
                 RequestProbeInterceptor { probed ->
                     lastProbe = probed
@@ -60,7 +69,7 @@ class InterceptorLabViewModel @Inject constructor() : BaseViewModel() {
             runCatching {
                 withContext(Dispatchers.IO) {
                     val request = Request.Builder()
-                        .url("https://jsonplaceholder.typicode.com/posts/1")
+                        .url("${NetworkModule.JSON_PLACEHOLDER_BASE_URL}posts/1")
                         .get()
                         .build()
                     client.newCall(request).execute().use { response ->
@@ -73,7 +82,14 @@ class InterceptorLabViewModel @Inject constructor() : BaseViewModel() {
                 val headersText = probe?.headers
                     ?.entries
                     ?.sortedBy { it.key.lowercase() }
-                    ?.joinToString("\n") { "${it.key}: ${it.value}" }
+                    ?.joinToString("\n") { (key, value) ->
+                        val display = if (key.equals(HeaderInterceptor.HEADER_DEMO_TOKEN, true)) {
+                            "███(redacted in OkHttp log)"
+                        } else {
+                            value
+                        }
+                        "$key: $display"
+                    }
                     .orEmpty()
                 _uiState.value = _uiState.value.copy(
                     loading = false,
@@ -83,12 +99,15 @@ class InterceptorLabViewModel @Inject constructor() : BaseViewModel() {
                         append(headersText)
                     }.trim(),
                     responseSummary = "HTTP $code\n\n$bodyPreview",
+                    metricsText = NetworkMonitor.last?.summary().orEmpty(),
                     error = null,
                 )
             }.onFailure { error ->
+                val mapped = NetworkErrorMapper.map(error)
                 _uiState.value = _uiState.value.copy(
                     loading = false,
-                    error = error.message ?: "请求失败",
+                    error = mapped.toUserMessage(),
+                    metricsText = NetworkMonitor.last?.summary().orEmpty(),
                 )
             }
         }

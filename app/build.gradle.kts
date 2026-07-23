@@ -26,6 +26,11 @@ android {
                 "proguard-rules.pro",
             )
         }
+        create("benchmark") {
+            initWith(getByName("release"))
+            matchingFallbacks += listOf("release")
+            isDebuggable = true
+        }
     }
 
     compileOptions {
@@ -56,6 +61,11 @@ dependencies {
     implementation(project(":feature:network"))
     implementation(project(":feature:system"))
     implementation(project(":feature:view-custom"))
+    implementation(project(":feature:components"))
+    implementation(project(":feature:basic-ui"))
+    implementation(project(":feature:android-ktx"))
+    implementation(project(":feature:charts"))
+    implementation(project(":feature:charts-custom"))
     implementation(project(":feature:animation"))
     implementation(project(":feature:image"))
     implementation(project(":feature:performance"))
@@ -72,6 +82,9 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.profileinstaller)
     implementation(libs.androidx.splashscreen)
+
+    // LeakCanary：仅 debug，自动安装 ObjectWatcher；release 不引入任何代码
+    debugImplementation(libs.leakcanary.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)

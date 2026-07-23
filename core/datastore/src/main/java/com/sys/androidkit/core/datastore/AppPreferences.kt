@@ -3,6 +3,7 @@ package com.sys.androidkit.core.datastore
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
@@ -17,9 +18,15 @@ class AppPreferences(private val context: Context) {
     private val themeKey = stringPreferencesKey("theme_mode")
     private val favoritesKey = stringSetPreferencesKey("favorite_demo_ids")
     private val recentKey = stringPreferencesKey("recent_demo_ids")
+    private val biometricLoginKey = booleanPreferencesKey("biometric_login_enabled")
 
     val themeMode: Flow<String> = context.dataStore.data.map { prefs ->
         prefs[themeKey] ?: ThemeMode.SYSTEM.name
+    }
+
+    /** SYS-06：是否允许用生物识别解锁演示账号会话 */
+    val biometricLoginEnabled: Flow<Boolean> = context.dataStore.data.map { prefs ->
+        prefs[biometricLoginKey] ?: false
     }
 
     val favoriteDemoIds: Flow<Set<String>> = context.dataStore.data.map { prefs ->
@@ -59,6 +66,12 @@ class AppPreferences(private val context: Context) {
                 .toMutableList()
             current.add(0, demoId)
             prefs[recentKey] = current.take(MAX_RECENT).joinToString(",")
+        }
+    }
+
+    suspend fun setBiometricLoginEnabled(enabled: Boolean) {
+        context.dataStore.edit { prefs ->
+            prefs[biometricLoginKey] = enabled
         }
     }
 

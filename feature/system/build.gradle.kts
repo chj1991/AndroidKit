@@ -26,6 +26,8 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(project(":core:ui"))
+    implementation(project(":core:datastore"))
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.biometric)
 }

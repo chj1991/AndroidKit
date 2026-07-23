@@ -1,49 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:title="@string/feature_performance_leak_title" />
-
-    <TextView
-        android:id="@+id/tvStatus"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLeak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:text="@string/feature_performance_leak_create" />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:title="@string/feature_performance_leak_title" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnFix"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/feature_performance_leak_fix" />
+        <TextView
+            android:id="@+id/tvLeakCanary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnClear"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:text="@string/feature_performance_leak_clear" />
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textAppearance="?attr/textAppearanceBodyLarge" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/feature_performance_leak_tips"
-        android:textAppearance="?attr/textAppearanceBodyMedium" />
-</LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLeak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/feature_performance_leak_create" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRecreate"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/feature_performance_leak_recreate" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFix"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/feature_performance_leak_fix" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClear"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/feature_performance_leak_clear" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/feature_performance_leak_tips"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+    </LinearLayout>
+</ScrollView>

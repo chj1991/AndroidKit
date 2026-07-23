@@ -4,6 +4,7 @@ import android.app.Application
 import android.os.SystemClock
 import androidx.appcompat.app.AppCompatDelegate
 import com.sys.androidkit.core.common.log.AppLog
+import com.sys.androidkit.core.common.log.InMemoryLogTree
 import com.sys.androidkit.core.common.startup.StartupTrace
 import com.sys.androidkit.core.datastore.AppPreferences
 import com.sys.androidkit.core.datastore.ThemeMode
@@ -15,6 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @HiltAndroidApp
 class AndroidKitApp : Application() {
@@ -27,7 +29,9 @@ class AndroidKitApp : Application() {
     override fun onCreate() {
         val start = SystemClock.elapsedRealtime()
         super.onCreate()
-        AppLog.enabled = BuildConfig.DEBUG
+        plantTimber()
+        AppLog.enabled = true
+        installLeakCanaryIfDebug()
         val mmkvRoot = MmkvInitializer.init(this)
         AppLog.i("AndroidKitApp started, mmkvRoot=$mmkvRoot")
         observeTheme()
@@ -37,6 +41,18 @@ class AndroidKitApp : Application() {
             processStartElapsedRealtime = start,
         )
         AppLog.i("Application.onCreate cost=${cost}ms")
+    }
+
+    /**
+     * Debug：Logcat（DebugTree）+ 应用内缓冲（InMemoryLogTree）。
+     * Release：仅 InMemoryLogTree，供 Log Viewer Demo；正式产品可改为不上报或远端 Tree。
+     */
+    private fun plantTimber() {
+        if (Timber.forest().isNotEmpty()) return
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
+        Timber.plant(InMemoryLogTree())
     }
 
     private fun observeTheme() {
@@ -53,6 +69,22 @@ class AndroidKitApp : Application() {
                         },
                     )
                 }
+        }
+    }
+
+    /**
+     * LeakCanary 仅 debugImplementation，main 源码用反射调用 debug 源集安装器，
+     * 避免 release 编译期引用 LeakCanary 类型。
+     */
+    private fun installLeakCanaryIfDebug() {
+        if (!BuildConfig.DEBUG) return
+        runCatching {
+            Class.forName("com.sys.androidkit.debug.LeakCanaryInstaller")
+                .getMethod("install")
+                .invoke(null)
+            AppLog.i("LeakCanary configured (retainedVisibleThreshold=1)")
+        }.onFailure {
+            AppLog.e("LeakCanaryInstaller not available", it)
         }
     }
 }

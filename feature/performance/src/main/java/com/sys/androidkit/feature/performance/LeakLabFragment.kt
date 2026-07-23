@@ -25,9 +25,20 @@ class LeakLabFragment : BaseFragment<FragmentLeakBinding>() {
     override fun initView() {
         binding.toolbar.setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
         binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+
+        binding.tvLeakCanary.text = if (isDebuggable()) {
+            getString(R.string.feature_performance_leak_canary_debug)
+        } else {
+            getString(R.string.feature_performance_leak_canary_release)
+        }
+
         binding.btnLeak.setOnClickListener {
             LeakyActivityHolder.retain(requireActivity())
             viewModel.refresh()
+        }
+        binding.btnRecreate.setOnClickListener {
+            // 销毁当前 Activity 实例；若已被单例持有，LeakCanary 会在 GC 后报告泄漏
+            requireActivity().recreate()
         }
         binding.btnFix.setOnClickListener {
             LeakyActivityHolder.retainApplication(requireContext())
@@ -53,5 +64,9 @@ class LeakLabFragment : BaseFragment<FragmentLeakBinding>() {
                 }
             }
         }
+    }
+
+    private fun isDebuggable(): Boolean {
+        return (requireContext().applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE) != 0
     }
 }

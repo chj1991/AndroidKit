@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 对照 BasicUI ShapeTextViewActivity + Wiki 全部 Shape 属性 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- ========== ShapeTextView ========== -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:text="ShapeTextView"
+        android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:text="圆角实心背景 shapeTvBackgroundColor + shapeTvRadius"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <com.peakmain.ui.widget.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="圆角实心"
+        android:textColor="@android:color/white"
+        app:shapeTvBackgroundColor="@color/ui_color_01a8e3"
+        app:shapeTvRadius="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp"
+        android:text="描边 shapeTvStrokeWidth / shapeTvStrokeColor + pressedColor"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <com.peakmain.ui.widget.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="描边 + 按下变色（点我）"
+        android:textColor="@color/ui_color_4A4A4A"
+        app:shapeTvPressedColor="#F1F4F6"
+        app:shapeTvRadius="20dp"
+        app:shapeTvStrokeColor="@color/ui_color_01a8e3"
+        app:shapeTvStrokeWidth="2dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp"
+        android:text="图文居中：drawableLeft / Right / Top / Bottom"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.peakmain.ui.widget.ShapeTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_et_close"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Left"
+            android:textColor="@color/ui_color_4A4A4A"
+            app:shapeTvRadius="12dp"
+            app:shapeTvStrokeColor="@color/ui_color_01a8e3"
+            app:shapeTvStrokeWidth="1dp" />
+
+        <com.peakmain.ui.widget.ShapeTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:drawableEnd="@drawable/ic_et_close"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Right"
+            android:textColor="@color/ui_color_4A4A4A"
+            app:shapeTvRadius="12dp"
+            app:shapeTvStrokeColor="@color/ui_color_01a8e3"
+            app:shapeTvStrokeWidth="1dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <com.peakmain.ui.widget.ShapeTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_et_close"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Top"
+            android:textColor="@color/ui_color_4A4A4A"
+            app:shapeTvRadius="12dp"
+            app:shapeTvStrokeColor="@color/ui_color_01a8e3"
+            app:shapeTvStrokeWidth="1dp" />
+
+        <com.peakmain.ui.widget.ShapeTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_et_close"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Bottom"
+            android:textColor="@color/ui_color_4A4A4A"
+            app:shapeTvRadius="12dp"
+            app:shapeTvStrokeColor="@color/ui_color_01a8e3"
+            app:shapeTvStrokeWidth="1dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp"
+        android:text="渐变 LEFT_RIGHT / TOP_BOTTOM + 四角圆角"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <com.peakmain.ui.widget.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="渐变 LEFT_RIGHT"
+        android:textColor="@android:color/white"
+        app:shapeTvEndColor="@color/ui_color_BE3468"
+        app:shapeTvOrientation="LEFT_RIGHT"
+        app:shapeTvRadius="12dp"
+        app:shapeTvStartColor="@color/ui_color_01a8e3" />
+
+    <com.peakmain.ui.widget.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="四角不同圆角"
+        android:textColor="@android:color/white"
+        app:shapeTvBackgroundColor="@color/ui_color_2F73F6"
+        app:shapeTvBottomLeftRadius="4dp"
+        app:shapeTvBottomRightRadius="20dp"
+        app:shapeTvTopLeftRadius="20dp"
+        app:shapeTvTopRightRadius="4dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp"
+        android:text="shapeTvShape=oval / ActiveMotion 水波纹 / 动态按下与禁用色"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.peakmain.ui.widget.ShapeTextView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            app:shapeTvBackgroundColor="#333333"
+            app:shapeTvRadius="6dp"
+            app:shapeTvShape="oval" />
+
+        <com.peakmain.ui.widget.ShapeTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="ActiveMotion 点我"
+            android:textColor="@android:color/white"
+            app:shapeTvActiveMotion="true"
+            app:shapeTvBackgroundColor="@color/ui_color_01a8e3"
+            app:shapeTvRadius="12dp" />
+    </LinearLayout>
+
+    <com.peakmain.ui.widget.ShapeTextView
+        android:id="@+id/stvPressed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="setPressedColor（代码设置，点我）"
+        android:textColor="@android:color/white"
+        app:shapeTvBackgroundColor="@color/ui_color_01a8e3"
+        app:shapeTvRadius="12dp" />
+
+    <com.peakmain.ui.widget.ShapeTextView
+        android:id="@+id/stvDisabled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="setUnEnabledColor（禁用态）"
+        android:textColor="@android:color/white"
+        app:shapeTvBackgroundColor="@color/ui_color_01a8e3"
+        app:shapeTvRadius="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToggleEnable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="切换上方禁用态 enable/disable" />
+
+    <!-- ========== ShapeLinearLayout ========== -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="ShapeLinearLayout"
+        android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+    <com.peakmain.ui.widget.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        app:shapeLlBackgroundColor="@android:color/white"
+        app:shapeLlRadius="8dp"
+        app:shapeLlStrokeColor="#E0E0E0"
+        app:shapeLlStrokeWidth="1dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="白底圆角 + 描边容器" />
+    </com.peakmain.ui.widget.ShapeLinearLayout>
+
+    <com.peakmain.ui.widget.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:padding="14dp"
+        app:shapeLlEndColor="@color/ui_color_BE3468"
+        app:shapeLlOrientation="LEFT_RIGHT"
+        app:shapeLlRadius="8dp"
+        app:shapeLlStartColor="@color/ui_color_01a8e3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="渐变 ShapeLinearLayout"
+            android:textColor="@android:color/white" />
+    </com.peakmain.ui.widget.ShapeLinearLayout>
+
+    <com.peakmain.ui.widget.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:padding="14dp"
+        app:shapeLlBackgroundColor="#FFF3E0"
+        app:shapeLlBottomLeftRadius="4dp"
+        app:shapeLlBottomRightRadius="16dp"
+        app:shapeLlTopLeftRadius="16dp"
+        app:shapeLlTopRightRadius="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="四角不同圆角 ShapeLinearLayout" />
+    </com.peakmain.ui.widget.ShapeLinearLayout>
+
+    <!-- ========== ShapeConstraintLayout ========== -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp"
+        android:text="ShapeConstraintLayout"
+        android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+    <com.peakmain.ui.widget.ShapeConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:shapeClBackgroundColor="@android:color/white"
+        app:shapeClStrokeColor="#E0E0E0"
+        app:shapeClStrokeWidth="1dp"
+        app:shapeClTopLeftRadius="12dp"
+        app:shapeClTopRightRadius="12dp">
+
+        <TextView
+            android:id="@+id/tvClTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="顶部圆角卡片（对照 Wiki Dialog 用法）"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="shapeClBackgroundColor / shapeClTopLeftRadius / shapeClTopRightRadius / stroke"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvClTitle" />
+    </com.peakmain.ui.widget.ShapeConstraintLayout>
+
+    <com.peakmain.ui.widget.ShapeConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        app:shapeClEndColor="@color/ui_color_BE3468"
+        app:shapeClOrientation="TOP_BOTTOM"
+        app:shapeClRadius="12dp"
+        app:shapeClStartColor="@color/ui_color_01a8e3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="渐变 TOP_BOTTOM ConstraintLayout"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.peakmain.ui.widget.ShapeConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="属性清单：背景/描边/圆角/四角圆角/渐变方向/shape(rect|oval)/ActiveMotion/Pressed/UnEnabled（Tv/Ll/Cl 前缀对应）"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+</LinearLayout>

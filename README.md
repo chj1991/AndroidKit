@@ -50,6 +50,11 @@ AndroidKit/
     ├── network/                  # Retrofit Demo
     ├── system/                   # 权限 / 通知 / 前台服务
     ├── view-custom/              # 自定义 View
+    ├── components/               # 系统 Widget + Material 3 组件目录
+    ├── basic-ui/                 # Peakmain/BasicUI Wiki 组件演示
+    ├── android-ktx/              # dengzii/AndroidKtx 常用扩展演示
+    ├── charts/                   # 图表（MPAndroidChart）
+    ├── charts-custom/            # 自定义 Canvas 图表
     ├── animation/                # 属性动画
     ├── image/                    # Coil 图片加载
     ├── performance/              # StrictMode / 泄漏场景
@@ -85,7 +90,7 @@ app → feature:* → core:*
 | APP-01 | Application 初始化 | Hilt、日志等 | P0 |
 | APP-02 | 单 Activity | `MainActivity` + NavHost | P0 |
 | APP-03 | Navigation 集成 | 跨 feature 导航、参数传递 | P0 |
-| APP-04 | 深色模式 | 跟随系统 / 手动 | P1 |
+| APP-04 | 深色模式 | DataStore + AppCompatDelegate（已落地） | P1 |
 | APP-05 | 启动主题 | SplashScreen + 透明系统栏（已落地） | P1 |
 
 ### 2. `core:common`
@@ -95,8 +100,8 @@ app → feature:* → core:*
 | COM-01 | Result / 密封类 | 成功失败统一模型 | P0 |
 | COM-02 | 协程工具 | Dispatchers、安全 launch | P0 |
 | COM-03 | 扩展函数 | View / Context 等 | P0 |
-| COM-04 | 日志封装 | Debug 开关、分级 | P0 |
-| COM-05 | 时间 / 格式化工具 | Demo 共用 | P2 |
+| COM-04 | 日志封装 | Timber + AppLog 桥接 + 应用内 Log Viewer（已增强） | P0 |
+| COM-05 | 时间 / 格式化工具 | `DateFormats`（已落地） | P2 |
 
 ### 3. `core:ui`
 
@@ -105,9 +110,9 @@ app → feature:* → core:*
 | UI-01 | BaseFragment | ViewBinding、通用状态 | P0 |
 | UI-02 | Demo 列表 Item | 目录卡片、说明区布局 | P0 |
 | UI-03 | 主题与资源 | color / typography | P0 |
-| UI-04 | 状态视图 | Loading / Empty / Error | P0 |
+| UI-04 | 状态视图 | `DemoStateView` Loading/Empty/Error（已落地） | P0 |
 | UI-05 | 弹窗 / Snackbar 封装 | `showSnackbar` / `showConfirmDialog`（已落地） | P1 |
-| UI-06 | 屏幕适配约定 | 尺寸、WindowInsets | P1 |
+| UI-06 | 屏幕适配约定 | `ak_*` dimens + WindowInsetsExt（已落地） | P1 |
 
 ### 4. `core:datastore`
 
@@ -115,7 +120,7 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | DS-01 | Preferences DataStore | 读写封装 | P0 |
 | DS-02 | 收藏 / 最近浏览 | DataStore 本地记录（已落地） | P1 |
-| DS-03 | 主题偏好 | 与设置页联动 | P1 |
+| DS-03 | 主题偏好 | 与设置页联动（已落地） | P1 |
 
 ### 5. `core:database`
 
@@ -125,17 +130,18 @@ app → feature:* → core:*
 | DB-02 | 协程 / Flow 查询 | 响应式列表 | P0 |
 | DB-03 | Migration | `MIGRATION_1_2` tags/updatedAt（已落地） | P1 |
 | DB-04 | TypeConverter | `List<String>` tags（已落地） | P1 |
-| DB-05 | 关系查询 | 一对多（可选） | P2 |
+| DB-05 | 关系查询 | Author–Note `@Relation` + CRUD（已增强） | P2 |
+| DB-06 | Paging 3 | Room `PagingSource` + `Pager`（已落地） | P2 |
 
 ### 6. `core:network`
 
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
-| NET-01 | OkHttp 客户端 | 超时、日志拦截器 | P0 |
-| NET-02 | Retrofit 封装 | 接口、Converter | P0 |
-| NET-03 | 统一错误处理 | HTTP / 业务错误映射 | P0 |
+| NET-01 | OkHttp 客户端 | 超时 + 脱敏日志 + EventListener（已增强） | P0 |
+| NET-02 | Retrofit 封装 | Moshi Converter / createApi / 多 BaseUrl（已增强） | P0 |
+| NET-03 | 统一错误处理 | NetworkError + safeApiCall（已落地） | P0 |
 | NET-04 | 请求头拦截器 | HeaderInterceptor + Probe（已落地） | P1 |
-| NET-05 | 缓存策略 | 基础 Cache | P2 |
+| NET-05 | 缓存策略 | OkHttp Cache Lab（已落地） | P2 |
 
 ### 7. `feature:home`
 
@@ -152,8 +158,8 @@ app → feature:* → core:*
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
 | SET-01 | 设置页骨架 | 主题等入口 | P0 |
-| SET-02 | 主题切换 | 浅色 / 深色 / 跟随系统 | P1 |
-| SET-03 | 关于页 | 版本、模块说明 | P2 |
+| SET-02 | 主题切换 | 浅色 / 深色 / 跟随系统（已落地） | P1 |
+| SET-03 | 关于页 | PackageManager 版本 + 模块说明（已落地） | P2 |
 
 ### 9. `feature:sample-counter`
 
@@ -169,17 +175,17 @@ app → feature:* → core:*
 |----|--------|------|--------|
 | LC-01 | Activity 生命周期墙 | 回调日志可视化 | P0 |
 | LC-02 | Fragment 生命周期墙 | 与 Activity 对照 | P0 |
-| LC-03 | 进程 / 重建场景 | 旋转、后台回收说明 | P1 |
+| LC-03 | 进程 / 重建场景 | Recreation Lab：Fragment/VM/SavedState（已落地） | P1 |
 | LC-04 | LifecycleObserver | DefaultLifecycleObserver 对比（已落地） | P1 |
 
 ### 11. `feature:async`
 
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
-| ASY-01 | 协程基础 | launch / async / 取消 | P0 |
-| ASY-02 | Dispatcher 切换 | Main / IO / Default | P0 |
-| ASY-03 | Flow 基础 | cold flow 收集 | P0 |
-| ASY-04 | StateFlow / SharedFlow | 热流对比 | P0 |
+| ASY-01 | 协程基础 | launch / 取消 / yield / 超时（已增强） | P0 |
+| ASY-02 | Dispatcher 切换 | Main / IO / Default + async（已增强） | P0 |
+| ASY-03 | Flow 基础 | Cold Flow / shareIn Hot（已增强） | P0 |
+| ASY-04 | StateFlow / SharedFlow | 粘性 / replay / 操作符链（已增强） | P0 |
 | ASY-05 | 结构化并发 | coroutineScope / supervisorScope / async（已落地） | P1 |
 | ASY-06 | WorkManager | 简单一次性任务（已落地） | P2 |
 
@@ -197,22 +203,23 @@ app → feature:* → core:*
 
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
-| ST-01 | Room CRUD | 增删改查 + Migration/TypeConverter 展示（已增强） | P0 |
+| ST-01 | Room CRUD | 完整增删改查 + 搜索 Flow（已增强） | P0 |
 | ST-02 | DataStore 读写 | 偏好示例 | P0 |
 | ST-03 | SP vs DataStore | 同页双写对比（已落地） | P1 |
-| ST-04 | 文件存储路径 | 内部 / 缓存说明 | P2 |
+| ST-04 | 文件存储路径 | File Path Lab：files/cache 对比（已落地） | P2 |
 | ST-05 | MMKV | 腾讯 MMKV 封装 + String/Int/Boolean Demo（已落地） | P1 |
+| ST-06 | Paging 3 | Room PagingSource + NoteWithAuthor（已落地） | P2 |
 
 ### 14. `feature:network`
 
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
-| NW-01 | Retrofit 列表请求 | Loading / Success / Error | P0 |
+| NW-01 | Retrofit 列表请求 | Loading / Success / Error（已增强） | P0 |
 | NW-02 | 协程挂起接口 | suspend API | P0 |
-| NW-03 | 错误态展示 | 超时、4xx/5xx | P0 |
+| NW-03 | 错误态展示 | 超时 / 404 / 500 + NetworkError 类型（已增强） | P0 |
 | NW-04 | 下拉刷新 | SwipeRefresh，刷新保留旧列表（已落地） | P1 |
-| NW-05 | 上传下载进度 | 可选 | P2 |
-| NW-06 | 请求头拦截器 | Interceptor Lab（已落地） | P1 |
+| NW-05 | 上传下载进度 | Progress Lab（已落地） | P2 |
+| NW-06 | 请求头拦截器 | Interceptor Lab + 脱敏日志 / 监控（已增强） | P1 |
 
 ---
 
@@ -221,10 +228,11 @@ app → feature:* → core:*
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
 | SYS-01 | 运行时权限 | Activity Result API，相机 / 通知（已实现） | P1 |
-| SYS-02 | 通知渠道 | 多渠道创建与发送（已实现） | P1 |
+| SYS-02 | 通知渠道 / 富样式 | 渠道 + 进度 / BigPicture / Bubble（已增强） | P1 |
 | SYS-03 | Foreground Service | 前台计时服务 + 常驻通知（已实现） | P1 |
 | SYS-04 | 广播限制适配 | 动态注册 + 应用内广播（已实现） | P1 |
 | SYS-05 | FileProvider 分享 | content:// 分享缓存文件（已实现） | P1 |
+| SYS-06 | 生物识别登录 | BiometricPrompt 指纹/面部 + DataStore 开关（已落地） | P1 |
 
 ### 16. `feature:view-custom`（Phase 2 进行中）
 
@@ -233,6 +241,43 @@ app → feature:* → core:*
 | VC-01 | 自定义 View 绘制 | RingProgress：Measure / Draw（已实现） | P1 |
 | VC-02 | 触摸事件 | 拖动改进度 + 防父布局拦截（已实现） | P1 |
 | VC-03 | 滑动冲突 | 竖/横嵌套 + requestDisallowIntercept（已落地） | P1 |
+
+### 16b. `feature:components`（组件库）
+
+| ID | 技术点 | 说明 | 优先级 |
+|----|--------|------|--------|
+| CMP-01 | 组件目录 | 系统 Widget + M3 一览 / 搜索 / 分组（已落地） | P1 |
+| CMP-02 | 交互示例 | 点进单项查看可操作 Demo（已落地） | P1 |
+
+### 16b2. `feature:basic-ui` + `:core:basicui`（Peakmain BasicUI）
+
+源码 vendored 自 [Peakmain/BasicUI](https://github.com/Peakmain/BasicUI)（包名 `com.peakmain.ui`），对照 [Wiki](https://github.com/Peakmain/BasicUI/wiki)。不含 NDK / GIF 压缩相关模块。
+
+| ID | 技术点 | 说明 | 优先级 |
+|----|--------|------|--------|
+| BUI-01 | 组件目录 | Dialog / NavigationBar / Loading / Flow+Popup / TopToast / 密码键盘 / Wheel / Tab / 多条目菜单筛选 / RV / 文本高亮（已落地） | P1 |
+| BUI-02 | 交互示例 | deep link `androidkit://demo/basic_ui_item/{componentId}`（已落地） | P1 |
+
+### 16b3. `feature:android-ktx` + `:core:androidktx`（dengzii AndroidKtx）
+
+源码 vendored 自 [dengzii/AndroidKtx](https://github.com/dengzii/AndroidKtx)（包名 `com.dengzii.ktx`），覆盖 View / Context / Activity / Intent / Bitmap / File / Uri / SharedPreferences 等常用扩展。
+
+| ID | 技术点 | 说明 | 优先级 |
+|----|--------|------|--------|
+| KTX-01 | 扩展目录 | View / Context / Activity / 工具分组（已落地） | P1 |
+| KTX-02 | 交互示例 | deep link `androidkit://demo/android_ktx_item/{componentId}`（已落地） | P1 |
+
+### 16c. `feature:charts`（图表）
+
+| ID | 技术点 | 说明 | 优先级 |
+|----|--------|------|--------|
+| CH-01 | Chart Lab | 折线 / 柱状 / 条形 / 饼图 / 雷达 / 散点 / 气泡 / K 线 / 组合（已落地） | P1 |
+
+### 16d. `feature:charts-custom`（自定义图表）
+
+| ID | 技术点 | 说明 | 优先级 |
+|----|--------|------|--------|
+| CHC-01 | Canvas 自绘 | 折线 / 柱状 / 饼图 / 雷达 + 入场动画（已落地） | P1 |
 
 ### 17. `feature:animation`（Phase 2 进行中）
 
@@ -248,7 +293,7 @@ app → feature:* → core:*
 
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
-| IMG-01 | Coil 加载 | 成功 / 失败 / 占位图（已实现） | P1 |
+| IMG-01 | Coil 加载优化 | 占位/错误/fallback、圆角/圆形/灰度、size 采样（已增强） | P1 |
 | IMG-02 | 缓存策略演示 | Coil memory/disk CachePolicy（已落地） | P1 |
 | IMG-03 | Photo Picker | 系统选择器 + content Uri（已落地） | P2 |
 | IMG-04 | 自定义图片选择 | 独立选择页 + Fragment Result 回传；张数默认 1 单选，>1 多选（已落地） | P2 |
@@ -259,9 +304,10 @@ app → feature:* → core:*
 | ID | 技术点 | 说明 | 优先级 |
 |----|--------|------|--------|
 | PF-01 | StrictMode | 主线程 DiskWrite / 卡顿演示（已实现） | P1 |
-| PF-02 | 内存泄漏场景 | 单例持有 Activity 对比修复（已实现） | P1 |
+| PF-02 | 内存泄漏 + LeakCanary | debug 集成 LeakCanary；单例泄漏 / recreate 复现（已增强） | P1 |
 | PF-03 | 启动优化说明 | Application 耗时 + 串行/并行对比（已实现） | P1 |
 | PF-04 | Baseline Profile | ProfileInstaller + 生成清单说明（已落地） | P2 |
+| PF-05 | Log Viewer | Timber / InMemoryLogTree 应用内查看（已落地） | P1 |
 
 ### 20. `feature:compat`（Phase 2 进行中）
 
@@ -277,7 +323,7 @@ app → feature:* → core:*
 
 | 模块 | 技术点方向 | 优先级 |
 |------|------------|--------|
-| `:benchmark` | Macrobenchmark 生成 baseline-prof.txt | P2 |
+| `:benchmark` | Macrobenchmark 冷启动骨架（已落地，需真机跑） | P2 |
 | `architecture:mvi` | Intent / Store / Effect，与 MVVM 对比 | 后续 |
 | 架构切换 | 设置中手动切换 MVVM / MVI | 后续 |
 
@@ -319,12 +365,14 @@ feature:network             NW-01 ~ NW-04
  ├─ 架构示例（Counter）
  ├─ 生命周期
  ├─ 异步并发（Coroutine / Flow / WorkManager）
+ ├─ 组件库（系统 Widget + Material 3）
+ ├─ 图表（MPAndroidChart + Canvas 自绘）
  ├─ UI 界面（… / Transition / Lottie / MotionLayout）
  ├─ 数据存储（Room / DataStore / MMKV）
  ├─ 网络通信
  ├─ 图片多媒体（Coil / Photo Picker / Custom Picker / CameraX）
- ├─ 系统能力（Permission / Notification / Foreground / FileProvider / Broadcast）
- ├─ 性能优化（StrictMode / Leak / Startup / Baseline Profile）
+ ├─ 系统能力（Permission / Biometric / Notification / Foreground / FileProvider / Broadcast）
+ ├─ 性能优化（StrictMode / LeakCanary / Startup / Baseline / Log Viewer）
  ├─ 安全兼容（Compat / Scoped Storage / Background）
  └─ 设置
 ```
@@ -346,20 +394,26 @@ Phase 1 完成；Phase 2 主体 Demo 已较完整。`:app:assembleDebug` 可通�
 | 模块 | 状态 |
 |------|------|
 | `app` | 单 Activity + SplashScreen + Navigation + Deep Link + Hilt |
-| `core:*` | common / ui(Snackbar·Dialog) / datastore / database(Migration) / network |
+| `core:*` | common(DateFormats) / ui(State·Snackbar) / datastore / database / network |
 | `feature:home` | 分类首页 + Demo 列表 + 搜索 + 收藏/最近 |
-| `feature:settings` | 设置页 + DataStore 主题切换（跟随系统 / 浅色 / 深色） |
+| `feature:settings` | 主题切换 + 关于页 |
 | `feature:sample-counter` | Counter MVVM + `@HiltViewModel` |
-| `feature:lifecycle` | 生命周期日志墙；LifecycleObserver Lab |
+| `feature:lifecycle` | 日志墙；Observer；Recreation（旋转/进程死亡） |
 | `feature:async` | Coroutine / Flow / WorkManager / Structured Concurrency |
 | `feature:recycler` | 多 Type + DiffUtil；TouchHelper（装饰/拖拽/侧滑） |
-| `feature:storage` | Room(CRUD+Migration+TypeConverter) / DataStore / SP vs DS / MMKV |
-| `feature:network` | Retrofit + SwipeRefresh；Interceptor Lab |
-| `feature:system` | Permission / Notification / Foreground / FileProvider / Broadcast |
+| `feature:storage` | Room CRUD / Relation / Paging3 / DataStore / MMKV / File Path |
+| `feature:network` | Retrofit+错误映射/监控；Interceptor；Cache；Progress |
+| `:benchmark` | Macrobenchmark 冷启动 / 帧耗时骨架 |
+| `feature:system` | Permission；Biometric；Notification；Foreground；FileProvider；Broadcast |
 | `feature:view-custom` | RingProgress；Nested Scroll 滑动冲突 |
+| `feature:components` | 系统 Widget + Material 3 组件目录与示例 |
+| `core:basicui` / `feature:basic-ui` | Peakmain/BasicUI 封装组件源码与 Wiki 对照 Demo |
+| `core:androidktx` / `feature:android-ktx` | dengzii/AndroidKtx 常用 Kotlin 扩展与 Demo |
+| `feature:charts` | MPAndroidChart：折线 / 柱状 / 饼图 / 雷达 / K 线等 |
+| `feature:charts-custom` | Canvas 自绘：折线 / 柱状 / 饼图 / 雷达 |
 | `feature:animation` | 属性动画；Transition；Lottie；MotionLayout |
 | `feature:image` | Coil / Cache；Photo Picker；自定义选图；CameraX |
-| `feature:performance` | StrictMode + Leak + Startup + Baseline Profile |
+| `feature:performance` | StrictMode；LeakCanary；Startup；Baseline；Log Viewer |
 | `feature:compat` | 行为变更清单；Scoped Storage；后台限制 |
 
 ### 运行
@@ -377,6 +431,7 @@ Phase 1 完成；Phase 2 主体 Demo 已较完整。`:app:assembleDebug` 可通�
 - `androidkit://demo/{demoId}`
 - `androidkit://favorites`
 - `androidkit://settings`
+- `androidkit://settings/about`
 
 ### Hilt 约定
 

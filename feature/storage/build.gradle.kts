@@ -29,5 +29,6 @@ dependencies {
     implementation(project(":core:database"))
     implementation(project(":core:datastore"))
     implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.paging.runtime)
     implementation(libs.tencent.mmkv)
 }

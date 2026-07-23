@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_charts_title">Chart Lab</string>
+    <string name="feature_charts_tips">基于 MPAndroidChart：折线 / 柱状 / 条形 / 饼图 / 雷达 / 散点 / 气泡 / K 线 / 组合。切换类型或刷新随机数据。</string>
+    <string name="feature_charts_refresh">刷新数据</string>
+    <string name="feature_charts_animate">重播动画</string>
+</resources>

@@ -34,6 +34,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.sys.androidkit.feature.settings.AboutFragment"
+        android:label="About">
+        <deepLink app:uri="androidkit://settings/about" />
+    </fragment>
+
+    <fragment
         android:id="@+id/counterFragment"
         android:name="com.sys.androidkit.feature.samplecounter.CounterFragment"
         android:label="Counter">
@@ -52,6 +59,13 @@
         android:name="com.sys.androidkit.feature.lifecycle.LifecycleObserverLabFragment"
         android:label="LifecycleObserver">
         <deepLink app:uri="androidkit://demo/lifecycle_observer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recreationFragment"
+        android:name="com.sys.androidkit.feature.lifecycle.RecreationLabFragment"
+        android:label="Recreation">
+        <deepLink app:uri="androidkit://demo/recreation" />
     </fragment>
 
     <fragment
@@ -125,6 +139,27 @@
     </fragment>
 
     <fragment
+        android:id="@+id/filePathFragment"
+        android:name="com.sys.androidkit.feature.storage.FilePathLabFragment"
+        android:label="File Path">
+        <deepLink app:uri="androidkit://demo/file_path" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/relationFragment"
+        android:name="com.sys.androidkit.feature.storage.RelationLabFragment"
+        android:label="Relation">
+        <deepLink app:uri="androidkit://demo/relation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pagingFragment"
+        android:name="com.sys.androidkit.feature.storage.PagingLabFragment"
+        android:label="Paging">
+        <deepLink app:uri="androidkit://demo/paging" />
+    </fragment>
+
+    <fragment
         android:id="@+id/retrofitFragment"
         android:name="com.sys.androidkit.feature.network.RetrofitLabFragment"
         android:label="Retrofit">
@@ -139,10 +174,31 @@
     </fragment>
 
     <fragment
+        android:id="@+id/cacheFragment"
+        android:name="com.sys.androidkit.feature.network.CacheLabFragment"
+        android:label="Cache">
+        <deepLink app:uri="androidkit://demo/cache" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.sys.androidkit.feature.network.ProgressLabFragment"
+        android:label="Progress">
+        <deepLink app:uri="androidkit://demo/progress" />
+    </fragment>
+
+    <fragment
         android:id="@+id/permissionFragment"
         android:name="com.sys.androidkit.feature.system.PermissionLabFragment"
         android:label="Permission">
         <deepLink app:uri="androidkit://demo/permission" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/biometricFragment"
+        android:name="com.sys.androidkit.feature.system.BiometricLabFragment"
+        android:label="Biometric">
+        <deepLink app:uri="androidkit://demo/biometric" />
     </fragment>
 
     <fragment
@@ -164,6 +220,71 @@
         android:name="com.sys.androidkit.feature.viewcustom.NestedScrollLabFragment"
         android:label="Nested Scroll">
         <deepLink app:uri="androidkit://demo/nested_scroll" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/componentsHubFragment"
+        android:name="com.sys.androidkit.feature.components.ComponentHubFragment"
+        android:label="组件目录">
+        <deepLink app:uri="androidkit://demo/components" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/componentShowcaseFragment"
+        android:name="com.sys.androidkit.feature.components.ComponentShowcaseFragment"
+        android:label="组件示例">
+        <argument
+            android:name="componentId"
+            app:argType="string" />
+        <deepLink app:uri="androidkit://demo/component/{componentId}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basicUiHubFragment"
+        android:name="com.sys.androidkit.feature.basicui.BasicUiHubFragment"
+        android:label="BasicUI 组件">
+        <deepLink app:uri="androidkit://demo/basic_ui" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basicUiShowcaseFragment"
+        android:name="com.sys.androidkit.feature.basicui.BasicUiShowcaseFragment"
+        android:label="BasicUI 示例">
+        <argument
+            android:name="componentId"
+            app:argType="string" />
+        <deepLink app:uri="androidkit://demo/basic_ui_item/{componentId}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/androidKtxHubFragment"
+        android:name="com.sys.androidkit.feature.androidktx.AndroidKtxHubFragment"
+        android:label="AndroidKtx 扩展">
+        <deepLink app:uri="androidkit://demo/android_ktx" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/androidKtxShowcaseFragment"
+        android:name="com.sys.androidkit.feature.androidktx.AndroidKtxShowcaseFragment"
+        android:label="AndroidKtx 示例">
+        <argument
+            android:name="componentId"
+            app:argType="string" />
+        <deepLink app:uri="androidkit://demo/android_ktx_item/{componentId}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chartLabFragment"
+        android:name="com.sys.androidkit.feature.charts.ChartLabFragment"
+        android:label="Chart Lab">
+        <deepLink app:uri="androidkit://demo/charts" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customChartLabFragment"
+        android:name="com.sys.androidkit.feature.chartscustom.CustomChartLabFragment"
+        android:label="Custom Chart">
+        <deepLink app:uri="androidkit://demo/charts_custom" />
     </fragment>
 
     <fragment
@@ -287,6 +408,13 @@
         android:name="com.sys.androidkit.feature.performance.BaselineProfileLabFragment"
         android:label="Baseline Profile">
         <deepLink app:uri="androidkit://demo/baseline" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/logViewerFragment"
+        android:name="com.sys.androidkit.feature.performance.LogViewerLabFragment"
+        android:label="Log Viewer">
+        <deepLink app:uri="androidkit://demo/log_viewer" />
     </fragment>
 
     <fragment

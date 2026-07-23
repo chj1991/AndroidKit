@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/ak_screen_padding">
 
     <TextView
         android:id="@+id/tvDemoTitle"
@@ -15,20 +15,20 @@
         android:id="@+id/tvDemoSummary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/ak_space_8"
         android:textAppearance="?attr/textAppearanceBodyMedium" />
 
     <FrameLayout
         android:id="@+id/demoContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/ak_space_16"
         android:layout_weight="1" />
 
     <TextView
         android:id="@+id/tvDemoTips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/ak_space_12"
         android:textAppearance="?attr/textAppearanceBodySmall" />
 </LinearLayout>

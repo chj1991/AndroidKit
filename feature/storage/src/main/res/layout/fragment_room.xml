@@ -14,20 +14,60 @@
         android:id="@+id/tvTips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingTop="12dp"
+        android:paddingHorizontal="@dimen/ak_content_padding"
+        android:paddingTop="@dimen/ak_space_12"
         android:textAppearance="?attr/textAppearanceBodyMedium" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/feature_storage_add" />
+        android:layout_marginHorizontal="@dimen/ak_content_padding"
+        android:layout_marginTop="@dimen/ak_space_8"
+        android:hint="@string/feature_storage_room_search_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/ak_content_padding"
+        android:paddingTop="@dimen/ak_space_8"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/ak_content_padding">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/ak_space_8"
+            android:layout_weight="1"
+            android:text="@string/feature_storage_add" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearAll"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feature_storage_room_clear_all" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNotes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="12dp" />
+        android:clipToPadding="false"
+        android:padding="@dimen/ak_list_item_padding" />
 </LinearLayout>

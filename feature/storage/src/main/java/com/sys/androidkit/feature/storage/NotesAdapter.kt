@@ -5,13 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.sys.androidkit.core.common.time.DateFormats
 import com.sys.androidkit.core.database.NoteEntity
 import com.sys.androidkit.feature.storage.databinding.ItemNoteBinding
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class NotesAdapter(
+    private val onEdit: (NoteEntity) -> Unit,
     private val onDelete: (NoteEntity) -> Unit,
 ) : ListAdapter<NoteEntity, NotesAdapter.VH>(Diff) {
 
@@ -35,8 +34,6 @@ class NotesAdapter(
     inner class VH(
         private val binding: ItemNoteBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        private val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
-
         fun bind(note: NoteEntity) {
             val tags = if (note.tags.isEmpty()) {
                 binding.root.context.getString(R.string.feature_storage_room_tags_empty)
@@ -44,14 +41,18 @@ class NotesAdapter(
                 note.tags.joinToString(" · ")
             }
             binding.tvNote.text = buildString {
+                append('#')
+                append(note.id)
+                append(' ')
                 append(note.title)
                 append('\n')
                 append(note.content)
                 append('\n')
                 append(tags)
                 append(" · ")
-                append(timeFormat.format(Date(note.updatedAt)))
+                append(DateFormats.relativeToNow(note.updatedAt))
             }
+            binding.btnEdit.setOnClickListener { onEdit(note) }
             binding.btnDelete.setOnClickListener { onDelete(note) }
         }
     }

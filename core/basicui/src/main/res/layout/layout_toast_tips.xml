@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.peakmain.ui.widget.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toast_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dimen_24"
+    android:paddingTop="@dimen/dimen_16"
+    android:paddingBottom="@dimen/dimen_16"
+    tools:background="@color/ui_color_1F401B"
+
+    app:shapeLlBottomLeftRadius="@dimen/dimen_8"
+    app:shapeLlBottomRightRadius="@dimen/dimen_8">
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFFFF"
+        android:layout_gravity="left"
+        android:textSize="@dimen/font_size_14"
+        tools:text="提示：所有距离信息均为直线距离" />
+
+</com.peakmain.ui.widget.ShapeLinearLayout>

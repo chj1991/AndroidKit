@@ -13,11 +13,21 @@
 
     <string name="feature_system_notification_title">Notification Lab</string>
     <string name="feature_system_ensure_channels">创建 / 更新通知渠道</string>
+    <string name="feature_system_notify_section_channel">渠道对比</string>
+    <string name="feature_system_notify_section_styles">富样式：进度 / 大图 / 气泡</string>
     <string name="feature_system_notify_default">发送默认通知</string>
     <string name="feature_system_notify_important">发送重要通知</string>
     <string name="feature_system_notify_silent">发送静默通知</string>
+    <string name="feature_system_notify_progress">进度条通知</string>
+    <string name="feature_system_notify_progress_cancel">取消进度</string>
+    <string name="feature_system_notify_big_picture">大图通知</string>
+    <string name="feature_system_notify_bubble">气泡通知</string>
     <string name="feature_system_open_channel_settings">打开渠道设置</string>
-    <string name="feature_system_notification_tips">要点：Android 8+ 必须先创建 Channel。踩坑：渠道创建后 importance 用户可改，代码无法强制覆盖用户设置。</string>
+    <string name="feature_system_open_bubble_settings">打开气泡设置</string>
+    <string name="feature_system_bubble_activity_title">气泡会话</string>
+    <string name="feature_system_bubble_default_message">来自 AndroidKit 的气泡内容</string>
+    <string name="feature_system_bubble_close">关闭</string>
+    <string name="feature_system_notification_tips">要点：\n• 进度：同一 notifyId 反复更新 setProgress；ongoing 直到完成。\n• 大图：BigPictureStyle，展开后显示大图。\n• 气泡：Android 11+，需 Shortcut + BubbleMetadata + 系统允许气泡；部分 OEM 可能弱化气泡入口。\n踩坑：渠道 importance 以用户设置为准；气泡 Intent 需 FLAG_MUTABLE。</string>
 
     <string name="feature_system_fg_title">Foreground Service Lab</string>
     <string name="feature_system_fg_start">启动前台计时</string>
@@ -39,4 +49,25 @@
     <string name="feature_system_broadcast_status_on">已注册（RECEIVER_NOT_EXPORTED）</string>
     <string name="feature_system_broadcast_status_off">未注册</string>
     <string name="feature_system_broadcast_tips">要点：隐式广播静态注册受限，优先动态注册 + 显式/包名限定。踩坑：Android 13+ 注册需声明 exported 标志。</string>
+
+    <string name="feature_system_biometric_title">Biometric Lab</string>
+    <string name="feature_system_biometric_tips">BiometricPrompt 统一指纹 / 面部 / 虹膜；Weak 可含 2D 面容，Strong 为 Class 3。含 DEVICE_CREDENTIAL 时可回退锁屏 PIN。演示：密码登录 → 开启生物识别 → 退出 → 生物识别再登。</string>
+    <string name="feature_system_biometric_refresh">刷新能力检测</string>
+    <string name="feature_system_biometric_enroll">去系统录入</string>
+    <string name="feature_system_biometric_mode_label">Authenticator 模式</string>
+    <string name="feature_system_biometric_mode_strong">Strong</string>
+    <string name="feature_system_biometric_mode_weak">Weak</string>
+    <string name="feature_system_biometric_mode_strong_cred">Strong+凭据</string>
+    <string name="feature_system_biometric_mode_weak_cred">Weak+凭据</string>
+    <string name="feature_system_biometric_username">用户名</string>
+    <string name="feature_system_biometric_password">密码</string>
+    <string name="feature_system_biometric_password_login">密码登录</string>
+    <string name="feature_system_biometric_bio_login">生物识别登录</string>
+    <string name="feature_system_biometric_enable">开启生物识别登录</string>
+    <string name="feature_system_biometric_logout">退出登录</string>
+    <string name="feature_system_biometric_session_in">已登录：%1$s（上次认证：%2$s）</string>
+    <string name="feature_system_biometric_session_out">未登录</string>
+    <string name="feature_system_biometric_prompt_title">AndroidKit 登录</string>
+    <string name="feature_system_biometric_prompt_subtitle">使用 %1$s 验证身份</string>
+    <string name="feature_system_biometric_prompt_negative">使用密码</string>
 </resources>

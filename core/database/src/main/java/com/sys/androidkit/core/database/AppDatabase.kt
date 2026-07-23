@@ -7,16 +7,17 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
 @Database(
-    entities = [NoteEntity::class],
+    entities = [NoteEntity::class, AuthorEntity::class],
     version = AppDatabase.VERSION,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
+    abstract fun authorDao(): AuthorDao
 
     companion object {
-        const val VERSION = 2
+        const val VERSION = 3
         const val NAME = "android_kit.db"
 
         @Volatile
@@ -29,7 +30,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     NAME,
                 )
-                    .addMigrations(MIGRATION_1_2)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                     .build()
                     .also { instance = it }
             }

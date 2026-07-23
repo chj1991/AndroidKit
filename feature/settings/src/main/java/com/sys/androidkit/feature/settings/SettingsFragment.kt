@@ -2,10 +2,12 @@ package com.sys.androidkit.feature.settings
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.sys.androidkit.core.datastore.ThemeMode
 import com.sys.androidkit.core.ui.base.BaseFragment
@@ -35,6 +37,12 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
                 else -> ThemeMode.SYSTEM
             }
             viewModel.setTheme(mode)
+        }
+        binding.btnAbout.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("androidkit://settings/about".toUri())
+                .build()
+            findNavController().navigate(request)
         }
     }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- UI-06：统一间距刻度（Feature 布局优先引用，避免魔法数） -->
+    <dimen name="ak_space_4">4dp</dimen>
+    <dimen name="ak_space_8">8dp</dimen>
+    <dimen name="ak_space_12">12dp</dimen>
+    <dimen name="ak_space_16">16dp</dimen>
+    <dimen name="ak_space_24">24dp</dimen>
+    <dimen name="ak_space_32">32dp</dimen>
+
+    <dimen name="ak_screen_padding">16dp</dimen>
+    <dimen name="ak_content_padding">16dp</dimen>
+    <dimen name="ak_list_item_padding">12dp</dimen>
+    <dimen name="ak_section_gap">20dp</dimen>
+</resources>

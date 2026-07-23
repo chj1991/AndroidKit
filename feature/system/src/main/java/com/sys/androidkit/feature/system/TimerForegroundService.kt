@@ -64,7 +64,7 @@ class TimerForegroundService : Service() {
         NotificationCompat.Builder(this, KitNotificationChannels.CHANNEL_DEFAULT)
             .setContentTitle("前台计时服务")
             .setContentText("已运行 ${seconds}s")
-            .setSmallIcon(android.R.drawable.ic_media_play)
+            .setSmallIcon(R.drawable.ic_notification_kit)
             .setOngoing(true)
             .setOnlyAlertOnce(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)

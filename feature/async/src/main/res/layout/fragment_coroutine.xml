@@ -10,25 +10,92 @@
         android:layout_height="?attr/actionBarSize"
         android:title="@string/feature_async_coroutine_title" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/feature_async_start" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCancel"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:text="@string/feature_async_cancel" />
-
     <TextView
-        android:id="@+id/tvStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+        android:padding="@dimen/ak_content_padding"
+        android:text="@string/feature_async_coroutine_tips"
+        android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/ak_content_padding"
+            android:paddingVertical="@dimen/ak_space_8">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLaunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_coro_launch" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_cancel" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDispatchers"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_coro_dispatchers" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAsync"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_coro_async" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTimeout"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_coro_timeout" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnYield"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_coro_yield" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feature_async_clear_log" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/ak_content_padding">
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+    </ScrollView>
 </LinearLayout>

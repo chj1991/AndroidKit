@@ -2,6 +2,7 @@ package com.sys.androidkit.di
 
 import android.content.Context
 import com.sys.androidkit.core.database.AppDatabase
+import com.sys.androidkit.core.database.AuthorDao
 import com.sys.androidkit.core.database.NoteDao
 import com.sys.androidkit.core.datastore.AppPreferences
 import com.sys.androidkit.core.network.NetworkModule
@@ -31,6 +32,9 @@ object AppModule {
 
     @Provides
     fun provideNoteDao(database: AppDatabase): NoteDao = database.noteDao()
+
+    @Provides
+    fun provideAuthorDao(database: AppDatabase): AuthorDao = database.authorDao()
 
     @Provides
     @Singleton

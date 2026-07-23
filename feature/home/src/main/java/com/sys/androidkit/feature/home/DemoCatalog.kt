@@ -8,6 +8,7 @@ object DemoCatalog {
     const val DEMO_COUNTER = "counter"
     const val DEMO_LIFECYCLE = "lifecycle"
     const val DEMO_LIFECYCLE_OBSERVER = "lifecycle_observer"
+    const val DEMO_RECREATION = "recreation"
     const val DEMO_COROUTINE = "coroutine"
     const val DEMO_FLOW = "flow"
     const val DEMO_WORK = "work"
@@ -19,11 +20,22 @@ object DemoCatalog {
     const val DEMO_DATASTORE = "datastore"
     const val DEMO_SP_VS_DATASTORE = "sp_vs_datastore"
     const val DEMO_MMKV = "mmkv"
+    const val DEMO_FILE_PATH = "file_path"
+    const val DEMO_RELATION = "relation"
+    const val DEMO_PAGING = "paging"
     const val DEMO_RETROFIT = "retrofit"
     const val DEMO_INTERCEPTOR = "interceptor"
+    const val DEMO_CACHE = "cache"
+    const val DEMO_PROGRESS = "progress"
     const val DEMO_PERMISSION = "permission"
+    const val DEMO_BIOMETRIC = "biometric"
     const val DEMO_NOTIFICATION = "notification"
     const val DEMO_CUSTOM_VIEW = "custom_view"
+    const val DEMO_COMPONENTS = "components"
+    const val DEMO_BASIC_UI = "basic_ui"
+    const val DEMO_ANDROID_KTX = "android_ktx"
+    const val DEMO_CHARTS = "charts"
+    const val DEMO_CHARTS_CUSTOM = "charts_custom"
     const val DEMO_FOREGROUND = "foreground"
     const val DEMO_ANIMATION = "animation"
     const val DEMO_TRANSITION = "transition"
@@ -40,6 +52,7 @@ object DemoCatalog {
     const val DEMO_LEAK = "leak"
     const val DEMO_STARTUP = "startup"
     const val DEMO_BASELINE = "baseline"
+    const val DEMO_LOG_VIEWER = "log_viewer"
     const val DEMO_COMPAT = "compat"
     const val DEMO_SCOPED_STORAGE = "scoped_storage"
     const val DEMO_BACKGROUND_LIMIT = "background_limit"
@@ -75,6 +88,12 @@ object DemoCatalog {
                     summary = "DefaultLifecycleObserver：Fragment vs viewLifecycle",
                     tags = listOf("Lifecycle", "Observer"),
                 ),
+                DemoItem(
+                    id = DEMO_RECREATION,
+                    title = "Recreation Lab",
+                    summary = "旋转 / 进程死亡：Fragment vs VM vs SavedState",
+                    tags = listOf("Lifecycle", "SavedStateHandle"),
+                ),
             ),
         ),
         DemoCategory(
@@ -85,14 +104,14 @@ object DemoCatalog {
                 DemoItem(
                     id = DEMO_COROUTINE,
                     title = "Coroutine Lab",
-                    summary = "launch / 取消 / Dispatcher",
-                    tags = listOf("Coroutine"),
+                    summary = "launch/取消、Dispatcher、async、超时、yield",
+                    tags = listOf("Coroutine", "Dispatcher"),
                 ),
                 DemoItem(
                     id = DEMO_FLOW,
                     title = "Flow Lab",
-                    summary = "Flow / StateFlow / SharedFlow",
-                    tags = listOf("Flow"),
+                    summary = "Cold/Hot、StateFlow、SharedFlow、操作符",
+                    tags = listOf("Flow", "StateFlow", "SharedFlow"),
                 ),
                 DemoItem(
                     id = DEMO_WORK,
@@ -105,6 +124,50 @@ object DemoCatalog {
                     title = "Structured Concurrency",
                     summary = "coroutineScope / supervisorScope / async",
                     tags = listOf("Coroutine", "supervisorScope"),
+                ),
+            ),
+        ),
+        DemoCategory(
+            id = "components",
+            title = "组件库",
+            description = "系统 Widget、Material 3、BasicUI 与 Kotlin 扩展",
+            demos = listOf(
+                DemoItem(
+                    id = DEMO_COMPONENTS,
+                    title = "组件目录",
+                    summary = "系统控件 + M3 组件一览与交互示例",
+                    tags = listOf("Widget", "Material3", "Components"),
+                ),
+                DemoItem(
+                    id = DEMO_BASIC_UI,
+                    title = "BasicUI 组件",
+                    summary = "Peakmain/BasicUI：Dialog / Loading / RV / Wheel 等 Wiki 组件",
+                    tags = listOf("BasicUI", "Dialog", "RecyclerView"),
+                ),
+                DemoItem(
+                    id = DEMO_ANDROID_KTX,
+                    title = "AndroidKtx 扩展",
+                    summary = "dengzii/AndroidKtx：View / Context / Activity / Preferences 等常用扩展",
+                    tags = listOf("Ktx", "Extension", "Kotlin"),
+                ),
+            ),
+        ),
+        DemoCategory(
+            id = "charts",
+            title = "图表",
+            description = "折线 / 柱状 / 饼图等",
+            demos = listOf(
+                DemoItem(
+                    id = DEMO_CHARTS,
+                    title = "Chart Lab",
+                    summary = "折线、柱状、饼图、雷达、K 线等（MPAndroidChart）",
+                    tags = listOf("Chart", "MPAndroidChart"),
+                ),
+                DemoItem(
+                    id = DEMO_CHARTS_CUSTOM,
+                    title = "Custom Chart Lab",
+                    summary = "Canvas 自绘折线 / 柱状 / 饼图 / 雷达",
+                    tags = listOf("Canvas", "CustomView", "Chart"),
                 ),
             ),
         ),
@@ -171,8 +234,8 @@ object DemoCatalog {
                 DemoItem(
                     id = DEMO_ROOM,
                     title = "Room Lab",
-                    summary = "CRUD + Flow；Migration v2 + TypeConverter(tags)",
-                    tags = listOf("Room", "Migration", "TypeConverter"),
+                    summary = "完整 CRUD + 搜索 Flow + TypeConverter",
+                    tags = listOf("Room", "CRUD", "Flow"),
                 ),
                 DemoItem(
                     id = DEMO_DATASTORE,
@@ -192,6 +255,24 @@ object DemoCatalog {
                     summary = "腾讯 MMKV 封装：String/Int/Boolean",
                     tags = listOf("MMKV", "KV"),
                 ),
+                DemoItem(
+                    id = DEMO_FILE_PATH,
+                    title = "File Path Lab",
+                    summary = "filesDir / cacheDir / 外部专属目录对比",
+                    tags = listOf("File", "Cache", "Storage"),
+                ),
+                DemoItem(
+                    id = DEMO_RELATION,
+                    title = "Relation Lab",
+                    summary = "Author 1—N Note：增删改关联",
+                    tags = listOf("Room", "Relation"),
+                ),
+                DemoItem(
+                    id = DEMO_PAGING,
+                    title = "Paging Lab",
+                    summary = "Paging 3 + Room PagingSource（多表）",
+                    tags = listOf("Paging3", "Room"),
+                ),
             ),
         ),
         DemoCategory(
@@ -202,14 +283,26 @@ object DemoCatalog {
                 DemoItem(
                     id = DEMO_RETROFIT,
                     title = "Retrofit Lab",
-                    summary = "列表请求 + SwipeRefresh（刷新保留旧列表）",
-                    tags = listOf("Retrofit", "SwipeRefresh"),
+                    summary = "封装客户端 + safeApiCall / 404·500·超时 / 监控",
+                    tags = listOf("Retrofit", "Error", "Monitor"),
                 ),
                 DemoItem(
                     id = DEMO_INTERCEPTOR,
                     title = "Interceptor Lab",
-                    summary = "HeaderInterceptor 注入请求头并探测最终 Request",
+                    summary = "Header / 脱敏日志 / Probe / EventListener",
                     tags = listOf("OkHttp", "Interceptor"),
+                ),
+                DemoItem(
+                    id = DEMO_CACHE,
+                    title = "Cache Lab",
+                    summary = "OkHttp Cache + FORCE_NETWORK / FORCE_CACHE",
+                    tags = listOf("OkHttp", "Cache"),
+                ),
+                DemoItem(
+                    id = DEMO_PROGRESS,
+                    title = "Progress Lab",
+                    summary = "下载 / 上传字节进度回调",
+                    tags = listOf("OkHttp", "Progress"),
                 ),
             ),
         ),
@@ -221,8 +314,8 @@ object DemoCatalog {
                 DemoItem(
                     id = DEMO_IMAGE,
                     title = "Image Lab（Coil）",
-                    summary = "占位图 / 错误图 / 缓存加载",
-                    tags = listOf("Coil", "Image"),
+                    summary = "占位/错误/圆角/圆形/灰度/尺寸采样",
+                    tags = listOf("Coil", "Transform"),
                 ),
                 DemoItem(
                     id = DEMO_COIL_CACHE,
@@ -262,10 +355,16 @@ object DemoCatalog {
                     tags = listOf("Permission", "ActivityResult"),
                 ),
                 DemoItem(
+                    id = DEMO_BIOMETRIC,
+                    title = "Biometric Lab",
+                    summary = "指纹/面部登录 + Strong/Weak/凭据回退",
+                    tags = listOf("Biometric", "Fingerprint", "Face"),
+                ),
+                DemoItem(
                     id = DEMO_NOTIFICATION,
                     title = "Notification Lab",
-                    summary = "多渠道通知与渠道设置页",
-                    tags = listOf("Notification", "Channel"),
+                    summary = "渠道 + 进度条 / BigPicture / 气泡",
+                    tags = listOf("Notification", "Bubble", "BigPicture"),
                 ),
                 DemoItem(
                     id = DEMO_FOREGROUND,
@@ -300,9 +399,9 @@ object DemoCatalog {
                 ),
                 DemoItem(
                     id = DEMO_LEAK,
-                    title = "Leak Lab",
-                    summary = "单例错误持有 Activity 的对比修复",
-                    tags = listOf("Leak", "Context"),
+                    title = "Leak Lab（LeakCanary）",
+                    summary = "制造泄漏 + recreate；debug 集成 LeakCanary",
+                    tags = listOf("LeakCanary", "Memory"),
                 ),
                 DemoItem(
                     id = DEMO_STARTUP,
@@ -315,6 +414,12 @@ object DemoCatalog {
                     title = "Baseline Profile Lab",
                     summary = "ProfileInstaller 与生成清单说明",
                     tags = listOf("BaselineProfile", "Startup"),
+                ),
+                DemoItem(
+                    id = DEMO_LOG_VIEWER,
+                    title = "Log Viewer（Timber）",
+                    summary = "Timber + 应用内日志缓冲 / 过滤 / 复制",
+                    tags = listOf("Timber", "Log"),
                 ),
             ),
         ),

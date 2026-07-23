@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 对照 BasicUI activity_table_layout：BaseTabLayout + ViewPager -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:text="仿今日头条：滑动变色 + 下划线（左右滑或点 Tab）"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <com.sys.androidkit.feature.basicui.DemoBasicUiTabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:changeColor="@color/ui_color_01a8e3"
+        app:isShowUnderLine="true"
+        app:originColor="#8001A8E3" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#FFF5F5F5" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:text="属性：originColor / changeColor / isShowUnderLine\n子类实现 setTableTitle；initIndicator(data, viewPager)"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+</LinearLayout>

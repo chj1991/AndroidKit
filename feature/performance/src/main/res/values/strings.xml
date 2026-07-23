@@ -6,13 +6,16 @@
     <string name="feature_performance_sleep">主线程 sleep 300ms（卡顿演示）</string>
     <string name="feature_performance_tips">要点：StrictMode 用于开发期发现主线程 IO/泄漏迹象。踩坑：penaltyDeath 太激进，Demo 用 log + flash；正式环境务必关闭。</string>
 
-    <string name="feature_performance_leak_title">Leak Lab</string>
-    <string name="feature_performance_leak_create">制造泄漏（持有 Activity）</string>
+    <string name="feature_performance_leak_title">Leak Lab（LeakCanary）</string>
+    <string name="feature_performance_leak_create">① 制造泄漏（持有 Activity）</string>
+    <string name="feature_performance_leak_recreate">② recreate 触发 onDestroy</string>
     <string name="feature_performance_leak_fix">修复（改用 ApplicationContext）</string>
     <string name="feature_performance_leak_clear">清除引用</string>
-    <string name="feature_performance_leak_risk_yes">风险：旋转/退出后 Activity 可能无法回收</string>
+    <string name="feature_performance_leak_risk_yes">风险：recreate/退出后旧 Activity 无法回收 → LeakCanary 应报警</string>
     <string name="feature_performance_leak_risk_no">当前无明显 Activity 泄漏持有</string>
-    <string name="feature_performance_leak_tips">要点：单例/静态变量不要持有 Activity/View。踩坑：匿名内部类、Handler、监听器未解除也会泄漏；可用 LeakCanary 辅助排查。</string>
+    <string name="feature_performance_leak_canary_debug">LeakCanary：已集成（debug）。流程：① 制造泄漏 → ② recreate → 等通知/桌面鸭图标 → 查看泄漏链路（LeakyActivityHolder）。</string>
+    <string name="feature_performance_leak_canary_release">LeakCanary：当前非 debug 构建，未打包检测库。</string>
+    <string name="feature_performance_leak_tips">要点：单例/静态不要持有 Activity/View；持有 applicationContext 相对安全。LeakCanary 仅 debugImplementation，release 零侵入。踩坑：匿名内部类、Handler、未反注册监听器。</string>
 
     <string name="feature_performance_startup_title">Startup Lab</string>
     <string name="feature_performance_startup_app_cost">本次 Application.onCreate 约 %1$d ms</string>
@@ -24,4 +27,17 @@
     <string name="feature_performance_baseline_title">Baseline Profile Lab</string>
     <string name="feature_performance_baseline_open_startup">打开 Startup Lab</string>
     <string name="feature_performance_baseline_refresh">刷新说明</string>
+
+    <string name="feature_performance_log_title">Log Viewer（Timber）</string>
+    <string name="feature_performance_log_tips">Timber.DebugTree → Logcat；InMemoryLogTree → 本页缓冲。AppLog 已桥接到 Timber。可过滤级别、打样例、复制、清空。</string>
+    <string name="feature_performance_log_level_all">全部</string>
+    <string name="feature_performance_log_level_d">≥D</string>
+    <string name="feature_performance_log_level_i">≥I</string>
+    <string name="feature_performance_log_level_w">≥W</string>
+    <string name="feature_performance_log_level_e">≥E</string>
+    <string name="feature_performance_log_sample">打样例日志</string>
+    <string name="feature_performance_log_copy">复制可见</string>
+    <string name="feature_performance_log_clear">清空缓冲</string>
+    <string name="feature_performance_log_copied">已复制到剪贴板</string>
+    <string name="feature_performance_log_meta">显示 %1$d / 缓冲 %2$d 条</string>
 </resources>

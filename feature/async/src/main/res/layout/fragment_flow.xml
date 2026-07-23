@@ -10,24 +10,107 @@
         android:layout_height="?attr/actionBarSize"
         android:title="@string/feature_async_flow_title" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnEmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/feature_async_emit" />
-
-    <TextView
-        android:id="@+id/tvFlow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="@dimen/ak_content_padding"
         android:text="@string/feature_async_flow_tips"
         android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+    <TextView
+        android:id="@+id/tvMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/ak_content_padding"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/ak_content_padding"
+            android:paddingVertical="@dimen/ak_space_8">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_flow_cold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHot"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_flow_hot" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnState"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_flow_state" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShared"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_flow_shared" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReplay"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_flow_replay" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOperators"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_flow_operators" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCollectLatest"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:text="@string/feature_async_flow_collect_latest" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feature_async_clear_log" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/ak_content_padding">
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+    </ScrollView>
 </LinearLayout>

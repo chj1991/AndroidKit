@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:title="@string/feature_lifecycle_recreation_title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/ak_content_padding"
+        android:paddingTop="@dimen/ak_space_12"
+        android:text="@string/feature_lifecycle_recreation_hint"
+        android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+    <TextView
+        android:id="@+id/tvFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/ak_content_padding"
+        android:paddingTop="@dimen/ak_space_12"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <TextView
+        android:id="@+id/tvVm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/ak_content_padding"
+        android:paddingTop="@dimen/ak_space_8"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <TextView
+        android:id="@+id/tvSaved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/ak_content_padding"
+        android:paddingTop="@dimen/ak_space_8"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/ak_content_padding">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIncFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/ak_space_8"
+            android:layout_weight="1"
+            android:text="@string/feature_lifecycle_recreation_inc_fragment" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIncVm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/ak_space_8"
+            android:layout_weight="1"
+            android:text="@string/feature_lifecycle_recreation_inc_vm" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIncSaved"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/feature_lifecycle_recreation_inc_saved" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnClear"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/ak_content_padding"
+        android:text="@string/feature_lifecycle_clear" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:padding="@dimen/ak_content_padding"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+    </ScrollView>
+</LinearLayout>

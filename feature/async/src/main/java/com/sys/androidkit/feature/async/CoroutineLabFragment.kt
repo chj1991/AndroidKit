@@ -25,14 +25,19 @@ class CoroutineLabFragment : BaseFragment<FragmentCoroutineBinding>() {
     override fun initView() {
         binding.toolbar.setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
         binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
-        binding.btnStart.setOnClickListener { viewModel.start() }
-        binding.btnCancel.setOnClickListener { viewModel.cancel() }
+        binding.btnLaunch.setOnClickListener { viewModel.runLaunchCancel() }
+        binding.btnCancel.setOnClickListener { viewModel.cancelLongJob() }
+        binding.btnDispatchers.setOnClickListener { viewModel.runDispatchers() }
+        binding.btnAsync.setOnClickListener { viewModel.runAsyncAwait() }
+        binding.btnTimeout.setOnClickListener { viewModel.runTimeout() }
+        binding.btnYield.setOnClickListener { viewModel.runYield() }
+        binding.btnClear.setOnClickListener { viewModel.clearLog() }
     }
 
     override fun initObserver() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uiState.collect { binding.tvStatus.text = it.status }
+                viewModel.uiState.collect { binding.tvLog.text = it.log }
             }
         }
     }

@@ -3,5 +3,14 @@
     <string name="feature_lifecycle_title">Lifecycle Lab</string>
     <string name="feature_lifecycle_observer_title">LifecycleObserver Lab</string>
     <string name="feature_lifecycle_observer_hint">对比 Fragment lifecycle 与 viewLifecycleOwner 上的 DefaultLifecycleObserver。旋转或返回可观察 onDestroy / 重建。</string>
+    <string name="feature_lifecycle_recreation_title">Recreation Lab</string>
+    <string name="feature_lifecycle_recreation_hint">试：①旋转屏幕 ②开发者选项「不保留活动」后切后台再回。Fragment 字段会丢；ViewModel 扛旋转；SavedStateHandle 扛进程死亡。</string>
+    <string name="feature_lifecycle_recreation_fragment">Fragment 字段：%1$d（重建归零）</string>
+    <string name="feature_lifecycle_recreation_vm">ViewModel：session=%1$s · counter=%2$d（旋转保留）</string>
+    <string name="feature_lifecycle_recreation_saved">SavedStateHandle：%1$d（进程死亡可恢复）</string>
+    <string name="feature_lifecycle_recreation_inc_fragment">+Fragment</string>
+    <string name="feature_lifecycle_recreation_inc_vm">+VM</string>
+    <string name="feature_lifecycle_recreation_inc_saved">+Saved</string>
     <string name="feature_lifecycle_clear">清空日志</string>
 </resources>
+

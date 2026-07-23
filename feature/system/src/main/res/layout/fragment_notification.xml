@@ -6,7 +6,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/ak_space_24">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -18,22 +19,31 @@
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/ak_content_padding"
             android:textAppearance="?attr/textAppearanceBodyLarge" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEnsureChannels"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
             android:text="@string/feature_system_ensure_channels" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/ak_content_padding"
+            android:paddingTop="@dimen/ak_section_gap"
+            android:text="@string/feature_system_notify_section_channel"
+            android:textAppearance="?attr/textAppearanceTitleSmall" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNotifyDefault"
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
+            android:layout_marginTop="@dimen/ak_space_8"
             android:text="@string/feature_system_notify_default" />
 
         <com.google.android.material.button.MaterialButton
@@ -41,7 +51,8 @@
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
+            android:layout_marginTop="@dimen/ak_space_8"
             android:text="@string/feature_system_notify_important" />
 
         <com.google.android.material.button.MaterialButton
@@ -49,21 +60,79 @@
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
+            android:layout_marginTop="@dimen/ak_space_8"
             android:text="@string/feature_system_notify_silent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/ak_content_padding"
+            android:paddingTop="@dimen/ak_section_gap"
+            android:text="@string/feature_system_notify_section_styles"
+            android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/ak_content_padding"
+            android:paddingTop="@dimen/ak_space_8">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnProgressStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ak_space_8"
+                android:layout_weight="1"
+                android:text="@string/feature_system_notify_progress" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnProgressCancel"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/feature_system_notify_progress_cancel" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBigPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
+            android:layout_marginTop="@dimen/ak_space_8"
+            android:text="@string/feature_system_notify_big_picture" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
+            android:layout_marginTop="@dimen/ak_space_8"
+            android:text="@string/feature_system_notify_bubble" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOpenChannelSettings"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
+            android:layout_marginTop="@dimen/ak_space_8"
             android:text="@string/feature_system_open_channel_settings" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOpenBubbleSettings"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/ak_content_padding"
+            android:text="@string/feature_system_open_bubble_settings" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/ak_content_padding"
             android:text="@string/feature_system_notification_tips"
             android:textAppearance="?attr/textAppearanceBodyMedium" />
     </LinearLayout>

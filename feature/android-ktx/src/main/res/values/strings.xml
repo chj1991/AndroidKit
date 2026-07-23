@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_android_ktx_hub_title">AndroidKtx 扩展</string>
+    <string name="feature_android_ktx_hub_tips">源码来自 dengzii/AndroidKtx（已接入 :core:androidktx，包名 com.dengzii.ktx）。点条目进入交互示例。</string>
+    <string name="feature_android_ktx_search">搜索扩展 / 分组</string>
+    <string name="feature_android_ktx_filter_all">全部</string>
+    <string name="feature_android_ktx_filter_view">View</string>
+    <string name="feature_android_ktx_filter_context">Context</string>
+    <string name="feature_android_ktx_filter_activity">Activity</string>
+    <string name="feature_android_ktx_filter_util">工具</string>
+    <string name="feature_android_ktx_count">共 %1$d 项</string>
+    <string name="feature_android_ktx_section">文档：%1$s</string>
+    <string name="feature_android_ktx_group_view">View</string>
+    <string name="feature_android_ktx_group_context">Context</string>
+    <string name="feature_android_ktx_group_activity">Activity</string>
+    <string name="feature_android_ktx_group_util">工具</string>
+</resources>
